@@ -1,0 +1,1220 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>お金の3つのうつわ</title>
+<meta name="description" content="貯蓄・受容・流入。3つのうつわの定義と育て方、なぜこの順番なのかを一本にまとめました">
+<meta property="og:type" content="article">
+<meta property="og:title" content="お金の3つのうつわ">
+<meta property="og:description" content="貯蓄・受容・流入。3つのうつわの定義と育て方、なぜこの順番なのかを一本にまとめました">
+<meta name="theme-color" content="#F3E8DD">
+<style>*{box-sizing:border-box}body{margin:0}</style>
+<style>
+/* =========================================================
+   トンマナ：8/2 キックオフ講義スライドに準拠
+   クリーム地／極太の墨線／太ゴシック／朱の差し色／マーカー
+   意図的に単一テーマ（クリーム）で通す
+   ========================================================= */
+:root,
+:root[data-theme="light"],
+:root[data-theme="dark"]{
+  --cream:#F3E8DD;
+  --cream-lt:#FAF3EC;
+  --white:#FFFFFF;
+  --ink:#211815;
+  --ink-2:#5C4E44;
+  --muted:#8A7A6D;
+  --red:#E74A25;
+  --blue:#1E44A0;
+  --green:#33A055;
+  --orange:#E1813A;
+  --gold:#DCA839;
+  --hl:#F7D9A8;
+  --sans:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic","YuGothic",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  --bw:3px;
+  --measure:40rem;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;} *{transition:none!important;animation:none!important;}}
+
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.9;
+  letter-spacing:.02em;
+  -webkit-font-smoothing:antialiased;
+  word-break:auto-phrase;
+  line-break:strict;
+  font-feature-settings:"palt" 1;
+}
+h1,h2,h3,h4,.eyebrow,.chip,.lead,.big-note,.v .nm,.pyr .nm{text-wrap:balance;}
+p,li,td,th,dd,.sm{text-wrap:pretty;}
+
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 1.1rem;}
+
+/* ---------- utility ---------- */
+.hl{background:linear-gradient(transparent 58%, var(--hl) 58%);padding:0 2px;}
+.accent{color:var(--red);}
+b,strong{font-weight:800;}
+a{color:var(--ink);text-decoration-color:var(--red);text-underline-offset:.2em;}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:2px;}
+
+/* ---------- sticky bar ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:var(--cream);
+  border-bottom:var(--bw) solid var(--ink);
+}
+.topbar .wrap{display:flex;align-items:center;gap:.7rem;height:3.1rem;}
+.topbar .mk{
+  flex:1;font-weight:800;font-size:.92rem;letter-spacing:.06em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.topbar .to{
+  font-weight:800;font-size:.72rem;letter-spacing:.1em;
+  border:2px solid var(--ink);border-radius:5px;background:var(--white);
+  padding:.26rem .7rem;text-decoration:none;color:var(--ink);white-space:nowrap;
+}
+
+/* ---------- masthead ---------- */
+.masthead{padding:2.5rem 0 2rem;}
+.eyebrow{
+  font-size:.78rem;letter-spacing:.18em;color:var(--muted);
+  font-weight:800;margin-bottom:.8rem;
+}
+h1.title{
+  font-size:clamp(2rem,8.4vw,2.6rem);
+  line-height:1.28;letter-spacing:.05em;font-weight:800;
+  margin:0 0 1.1rem;
+}
+.subtitle{font-size:1rem;line-height:1.8;font-weight:500;margin:0;}
+.meta{
+  font-size:.76rem;color:var(--muted);letter-spacing:.06em;font-weight:800;
+  font-variant-numeric:tabular-nums;margin-top:1.1rem;
+}
+
+.archive{
+  display:flex;align-items:center;gap:.8rem;
+  margin-top:1.4rem;padding:.85rem 1rem;
+  border:var(--bw) solid var(--ink);border-radius:8px;background:var(--white);
+  text-decoration:none;color:var(--ink);
+}
+.archive .ico{
+  width:2.1rem;height:2.1rem;flex:none;border-radius:50%;
+  background:var(--red);color:var(--white);
+  display:grid;place-items:center;font-size:.8rem;
+}
+.archive .tx{flex:1;line-height:1.5;}
+.archive .tx b{display:block;font-size:.95rem;letter-spacing:.04em;}
+.archive .tx span{font-size:.72rem;color:var(--muted);font-weight:800;letter-spacing:.06em;}
+.archive .ar{font-weight:800;font-size:1.1rem;}
+
+/* ---------- note (dashed) ---------- */
+.note{
+  border:3px dashed var(--ink);border-radius:8px;background:var(--white);
+  padding:1.1rem 1.15rem;margin:1.6rem 0 0;
+}
+.note h2{font-size:1rem;font-weight:800;letter-spacing:.06em;margin:0 0 .6rem;}
+.note p{margin:0 0 .8rem;font-size:.9rem;line-height:1.8;}
+.note ul{margin:0;padding-left:1.1rem;font-size:.875rem;line-height:1.8;}
+.note li{margin-bottom:.35rem;}
+
+/* ---------- timestamp chip ---------- */
+.ts{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-size:.7rem;font-weight:800;letter-spacing:.06em;
+  font-variant-numeric:tabular-nums;
+  border:2px solid var(--ink);border-radius:5px;background:var(--white);
+  padding:.1rem .45rem;white-space:nowrap;vertical-align:.06em;
+  color:var(--ink);
+}
+.ts::before{content:"▶";font-size:.56em;color:var(--red);}
+.ts-line{margin:0 0 1rem;display:flex;flex-wrap:wrap;gap:.35rem;}
+
+/* ---------- TOC ---------- */
+.toc{margin:2.6rem 0 1rem;border:var(--bw) solid var(--ink);border-radius:8px;overflow:hidden;background:var(--white);}
+.toc h2{
+  background:var(--ink);color:var(--cream);margin:0;
+  font-size:.8rem;font-weight:800;letter-spacing:.16em;
+  padding:.7rem 1rem;
+}
+.toc ol{list-style:none;margin:0;padding:0;}
+.toc li + li{border-top:2px solid var(--ink);}
+.toc a{display:flex;align-items:baseline;gap:.65rem;padding:.7rem .9rem;text-decoration:none;color:var(--ink);}
+.toc li:nth-child(odd) a{background:var(--cream-lt);}
+.toc a:hover{background:var(--hl);}
+.toc .n{font-weight:800;font-size:.74rem;color:var(--red);flex:none;width:1.3rem;font-variant-numeric:tabular-nums;}
+.toc .l{flex:1;font-size:.9rem;line-height:1.55;font-weight:700;}
+.toc .t{font-size:.68rem;color:var(--muted);font-weight:800;flex:none;font-variant-numeric:tabular-nums;}
+
+/* ---------- sections ---------- */
+section{padding:2.8rem 0 .5rem;}
+section + section{border-top:var(--bw) solid var(--ink);}
+h2.sec{
+  font-size:clamp(1.45rem,6vw,1.8rem);
+  line-height:1.35;letter-spacing:.05em;font-weight:800;
+  margin:0 0 1.4rem;
+}
+h3{
+  font-size:1.1rem;font-weight:800;letter-spacing:.04em;line-height:1.5;
+  margin:2.4rem 0 .9rem;
+  border-left:8px solid var(--ink);padding-left:.65rem;
+}
+h4{
+  font-size:.9rem;font-weight:800;letter-spacing:.06em;color:var(--red);
+  margin:1.6rem 0 .55rem;
+}
+p{margin:0 0 1.1rem;}
+ul,ol{padding-left:1.2rem;margin:0 0 1.2rem;}
+li{margin-bottom:.45rem;}
+li::marker{color:var(--red);font-weight:800;}
+.sm{font-size:.84rem;color:var(--ink-2);line-height:1.75;}
+
+/* ---------- quote ---------- */
+blockquote{
+  margin:0 0 1.2rem;padding:.1rem 0 .1rem 1rem;
+  border-left:7px solid var(--red);
+  font-weight:500;
+}
+blockquote p{margin:0 0 .65rem;}
+blockquote p:last-child{margin-bottom:0;}
+blockquote.big{
+  border:var(--bw) solid var(--ink);border-left:9px solid var(--red);
+  border-radius:0 8px 8px 0;background:var(--white);
+  padding:1rem 1.1rem;
+}
+blockquote .lead{
+  font-size:1.08rem;font-weight:800;line-height:1.65;letter-spacing:.04em;
+}
+
+/* ---------- Q&A ---------- */
+.qa{
+  border:var(--bw) solid var(--ink);border-radius:8px;background:var(--white);
+  padding:1rem 1.05rem;margin:0 0 1.2rem;
+}
+.qa .q{display:flex;gap:.6rem;margin:0 0 .85rem;font-weight:800;line-height:1.7;letter-spacing:.03em;}
+.qa .q::before{
+  content:"Q";flex:none;width:1.5rem;height:1.5rem;border-radius:50%;
+  background:var(--ink);color:var(--cream);font-size:.78rem;font-weight:800;
+  display:grid;place-items:center;margin-top:.25rem;
+}
+.qa > *:last-child{margin-bottom:0;}
+
+/* ---------- vessels（キックオフのイラスト流用） ---------- */
+.vessels{display:flex;flex-direction:column;gap:.85rem;margin:0 0 1.4rem;}
+.v{
+  border:var(--bw) solid var(--ink);border-radius:8px;overflow:hidden;
+  background:var(--white);display:flex;align-items:stretch;
+}
+.v .pic{
+  flex:none;width:106px;padding:.7rem;display:grid;place-items:center;
+  background:var(--cream-lt);border-right:var(--bw) solid var(--ink);
+}
+.v .pic img{max-width:100%;max-height:104px;object-fit:contain;
+  filter:drop-shadow(0 4px 7px rgba(0,0,0,.18));}
+.v .cap{padding:.75rem .9rem;flex:1;display:flex;flex-direction:column;justify-content:center;}
+.v .no{font-size:.72rem;font-weight:800;letter-spacing:.12em;color:var(--muted);}
+.v .nm{font-size:1.12rem;font-weight:800;letter-spacing:.06em;margin-top:.05rem;}
+.v .ds{font-size:.83rem;line-height:1.6;margin-top:.3rem;}
+.v .hw{
+  font-size:.72rem;font-weight:800;color:var(--ink-2);letter-spacing:.03em;
+  margin-top:.4rem;padding-top:.4rem;border-top:2px dashed var(--muted);
+}
+
+/* ---------- pyramid ---------- */
+.pyr{display:flex;flex-direction:column;align-items:center;gap:.35rem;margin:0 0 .8rem;}
+.pyr .lvl{
+  width:100%;border:var(--bw) solid var(--ink);border-radius:7px;
+  padding:.55rem .8rem;display:flex;align-items:baseline;gap:.55rem;
+  background:var(--white);
+}
+.pyr .ix{font-size:.75rem;font-weight:800;color:var(--red);flex:none;}
+.pyr .nm{font-size:1rem;font-weight:800;letter-spacing:.06em;flex:none;}
+.pyr .ds{font-size:.76rem;color:var(--ink-2);flex:1;line-height:1.5;}
+.pyr .l5{width:64%;}
+.pyr .l4{width:73%;}
+.pyr .l3{width:82%;}
+.pyr .l2{width:91%;}
+.pyr .l1{width:100%;}
+.pyr-cap{font-size:.76rem;color:var(--muted);text-align:center;font-weight:800;letter-spacing:.06em;margin:0 0 1.5rem;}
+@media (max-width:430px){
+  .pyr .lvl{flex-direction:column;gap:.1rem;align-items:flex-start;}
+  .pyr .l5{width:76%;}.pyr .l4{width:83%;}.pyr .l3{width:89%;}.pyr .l2{width:95%;}
+}
+
+/* ---------- callout / big-note ---------- */
+.callout{
+  border:var(--bw) solid var(--ink);border-radius:8px;background:var(--cream-lt);
+  padding:1rem 1.1rem;margin:0 0 1.2rem;
+}
+.callout .k{
+  display:inline-block;background:var(--ink);color:var(--cream);
+  font-size:.68rem;font-weight:800;letter-spacing:.12em;
+  padding:.15rem .6rem;border-radius:4px;margin-bottom:.5rem;
+}
+.callout .k.o{background:var(--orange);}
+.callout p{margin:0 0 .9rem;font-size:.93rem;line-height:1.75;}
+.callout > *:last-child{margin-bottom:0;}
+
+.bignote{
+  border:var(--bw) solid var(--ink);border-radius:8px;background:var(--red);
+  color:var(--cream-lt);padding:1rem 1.1rem;margin:0 0 1.2rem;
+  font-size:1.05rem;font-weight:800;line-height:1.6;letter-spacing:.04em;
+}
+.bignote .s{display:block;font-size:.85rem;font-weight:500;line-height:1.7;margin-top:.5rem;letter-spacing:.02em;}
+
+/* ---------- tables ---------- */
+.tbl{overflow-x:auto;margin:0 0 1.3rem;-webkit-overflow-scrolling:touch;}
+table{border-collapse:collapse;width:100%;font-size:.82rem;line-height:1.65;}
+th,td{border:2px solid var(--ink);padding:.5rem .6rem;text-align:left;vertical-align:top;}
+th{background:var(--ink);color:var(--cream);font-weight:800;letter-spacing:.06em;font-size:.74rem;white-space:nowrap;}
+tbody tr:nth-child(odd) td{background:var(--cream-lt);}
+tbody tr:nth-child(even) td{background:var(--white);}
+td.tm{font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--red);text-align:center;}
+
+/* ---------- glossary ---------- */
+.gloss{margin:0 0 1.3rem;border:var(--bw) solid var(--ink);border-radius:8px;overflow:hidden;background:var(--white);}
+.gloss div{padding:.8rem .95rem;}
+.gloss div:nth-child(odd){background:var(--cream-lt);}
+.gloss div + div{border-top:2px solid var(--ink);}
+.gloss dt{font-weight:800;font-size:.98rem;letter-spacing:.06em;margin-bottom:.15rem;}
+.gloss dd{margin:0;font-size:.84rem;line-height:1.7;}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:2.6rem;border-top:var(--bw) solid var(--ink);
+  padding:1.8rem 0 4rem;font-size:.8rem;line-height:1.8;color:var(--ink-2);
+}
+footer p{margin:0 0 .3rem;}
+footer .sig{
+  margin-top:1.1rem;font-size:.7rem;font-weight:800;
+  letter-spacing:.12em;color:var(--muted);
+}
+
+/* =========================================================
+   印刷・PDF書き出し
+   Chrome: --print-to-pdf --no-pdf-header-footer
+   ページサイズはスマホ比率（390 × 720px）
+   ========================================================= */
+@media print{
+  @page{ size:390px 720px; margin:0; }
+  html,body{ background:var(--cream); }
+  .topbar,.totop{ display:none !important; }
+  .wrap{ max-width:none; padding:0 14px; }
+  section{ padding-top:1.6rem; }
+  .masthead{ padding-top:1.4rem; }
+
+  /* 途中で割れると読めなくなる塊は分割しない */
+  .v,.qa,.callout,.bignote,.note,.archive,.pyr,
+  blockquote,h3,h4,.gloss div,.toc,tr,footer{
+    break-inside:avoid; page-break-inside:avoid;
+  }
+  footer{ margin-top:1.5rem; padding-bottom:1rem; }
+  h2.sec,h3,h4{ break-after:avoid; page-break-after:avoid; }
+  section{ break-before:page; page-break-before:always; }
+  section:first-of-type{ break-before:auto; page-break-before:auto; }
+
+  /* 背景色・墨線を必ず出す */
+  *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  a{ text-decoration:none; }
+}
+
+/* ---------- back to top ---------- */
+.totop{
+  position:fixed;right:.9rem;bottom:.9rem;z-index:60;
+  width:2.7rem;height:2.7rem;border-radius:50%;
+  border:var(--bw) solid var(--ink);background:var(--white);
+  display:grid;place-items:center;text-decoration:none;
+  font-weight:800;font-size:1rem;color:var(--ink);
+}
+.totop:hover{background:var(--hl);}
+</style>
+
+</head>
+<body>
+<div id="top"></div>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="mk">お金の3つのうつわ</span>
+    <a class="to" href="#toc">目次</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">読みもの ／ 基礎</div>
+    <h1 class="title">お金の<br>3つのうつわ</h1>
+    <p class="subtitle">お金は「多い・少ない」ではなく、<span class="hl">3つの受け皿の大きさ</span>で捉える。<br>その3つを、ひとつずつ詳しく見ていきます。</p>
+
+    <div class="note">
+      <h2>この記事について</h2>
+      <p>「お金のうつわを育てる習慣コミュニティ」で扱っている<b>3つのうつわ</b>を、まとめて読める形にしたものです。</p>
+      <ul>
+        <li>コミュニティに参加していない方でも、<b>これだけで全体像がつかめる</b>ように書いています</li>
+        <li>読む順番は上から。<b>貯蓄 → 受容 → 流入</b> の順に育てるので、記事もその順番です</li>
+        <li>気になったところだけ、目次から飛んでも大丈夫です</li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="toc" id="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#s1"><span class="n">01</span><span class="l">3つのうつわとは</span><span class="t"></span></a></li>
+      <li><a href="#s2"><span class="n">02</span><span class="l">お金の4ステップ ── 順番は飛ばせない</span><span class="t"></span></a></li>
+      <li><a href="#s3"><span class="n">03</span><span class="l">貯蓄のうつわ ── 保っていられる量</span><span class="t"></span></a></li>
+      <li><a href="#s4"><span class="n">04</span><span class="l">受容のうつわ ── 受け取れる・喜びで使える量</span><span class="t"></span></a></li>
+      <li><a href="#s5"><span class="n">05</span><span class="l">流入のうつわ ── 稼げる量</span><span class="t"></span></a></li>
+      <li><a href="#s6"><span class="n">06</span><span class="l">なぜこの順番なのか ── 連動の理屈</span><span class="t"></span></a></li>
+      <li><a href="#s7"><span class="n">07</span><span class="l">バランスが崩れると、うつわは壊れる</span><span class="t"></span></a></li>
+      <li><a href="#s8"><span class="n">08</span><span class="l">幸せなお金持ち＝バランスが「自分仕様」</span><span class="t"></span></a></li>
+      <li><a href="#s9"><span class="n">09</span><span class="l">完璧はない ── 高速で回し続けるもの</span><span class="t"></span></a></li>
+      <li><a href="#s10"><span class="n">10</span><span class="l">自分のうつわを測る2つのゲーム</span><span class="t"></span></a></li>
+      <li><a href="#s11"><span class="n">11</span><span class="l">実践チェックリスト</span><span class="t"></span></a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+  <!-- ============ 1 ============ -->
+  <section id="s1">
+    <div class="eyebrow">01</div>
+    <h2 class="sec">3つのうつわとは</h2>
+
+    <p>お金の話をするとき、多くの人は「いくら持っているか」「いくら稼いでいるか」という<b>金額</b>で考えます。この記事では、そこを<span class="hl">「うつわ（受け皿）の大きさ」</span>に置き換えて見ていきます。</p>
+    <p>うつわは3つあります。</p>
+
+    <div class="vessels">
+      <div class="v">
+        <div class="pic"><img src="data:image/webp;base64,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" alt="貯蓄のうつわ"></div>
+        <div class="cap">
+          <div class="no">①</div>
+          <div class="nm">貯蓄のうつわ</div>
+          <div class="ds">入ってきたお金を<b>保っていられる</b>量</div>
+          <div class="hw">測り方 ── ここ半年で「勝手に貯まった」お金の平均</div>
+        </div>
+      </div>
+      <div class="v">
+        <div class="pic"><img src="data:image/webp;base64,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" alt="受容のうつわ"></div>
+        <div class="cap">
+          <div class="no">②</div>
+          <div class="nm">受容のうつわ</div>
+          <div class="ds"><b>受け取れる</b>量と、自分のために<b>喜びで使える</b>量</div>
+          <div class="hw">測り方 ── ここ半年の「喜びのある支出」の平均</div>
+        </div>
+      </div>
+      <div class="v">
+        <div class="pic"><img src="data:image/webp;base64,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" alt="流入のうつわ"></div>
+        <div class="cap">
+          <div class="no">③</div>
+          <div class="nm">流入のうつわ</div>
+          <div class="ds"><b>稼げる</b>量</div>
+          <div class="hw">測り方 ── ここ半年の収入＋臨時収入の平均（月商）</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>3つは積み上がっている</h3>
+    <p>この3つは並列ではなく、<b>下から積み上がるピラミッド</b>です。下が大きいほど、全体がうまく回ります。</p>
+
+    <div class="pyr">
+      <div class="lvl l5"><span class="ix">③</span><span class="nm">流入</span><span class="ds">稼げる量</span></div>
+      <div class="lvl l3"><span class="ix">②</span><span class="nm">受容</span><span class="ds">受け取れる／喜びで使える量</span></div>
+      <div class="lvl l1"><span class="ix">①</span><span class="nm">貯蓄</span><span class="ds">保っていられる量</span></div>
+    </div>
+    <p class="pyr-cap">育てる順番も、下から</p>
+
+    <h3>どのうつわが大きいかは、人によって違う</h3>
+    <p>3つのうつわの大きさには、<b>個人差がとても大きい</b>という特徴があります。特別なことをしていないのに貯まっていく人もいれば、まったく貯まらない人もいる。この差は<span class="hl">収入の多い少ないではなく、うつわの大きさの違い</span>です。</p>
+    <p>そして「どこが大きいか」は、育った環境や経験によって人それぞれです。どれかが小さいことは、優劣ではありません。</p>
+
+    <h3>求める人の傾向も違う</h3>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>うつわ</th><th>それを大きくしたいと感じる人の傾向</th></tr></thead>
+        <tbody>
+          <tr><td><b>貯蓄</b></td><td>安定欲求・安全への欲求が強い</td></tr>
+          <tr><td><b>受容</b></td><td>自分が何をしたら喜ぶかをよく知っている</td></tr>
+          <tr><td><b>流入</b></td><td>好奇心が強い・未知のことが好き</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sm">「貯金がたくさん欲しい」という願望は、金額そのものへの欲求というより、<b>安心感を確保したいという欲求</b>の現れとして読みます。</p>
+  </section>
+
+  <!-- ============ 2 ============ -->
+  <section id="s2">
+    <div class="eyebrow">02</div>
+    <h2 class="sec">お金の4ステップ ──<br>順番は飛ばせない</h2>
+
+    <p>昔からあらゆるお金持ちが伝えてきた教えとして、次の順番があります。</p>
+
+    <div class="bignote">
+      貯める → 使う → 稼ぐ → 増やす
+    </div>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>ステップ</th><th>中身</th><th>うつわ</th></tr></thead>
+        <tbody>
+          <tr><td><b>① 貯める</b></td><td>支出をカットする＋要らないものを捨てる</td><td>貯蓄</td></tr>
+          <tr><td><b>② 使う</b></td><td>自分がやってみたいことに使う＋事業投資</td><td>受容</td></tr>
+          <tr><td><b>③ 稼ぐ</b></td><td>自分のスキルをシェアしていく</td><td>流入</td></tr>
+          <tr><td><b>④ 増やす</b></td><td>運用など</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>多くの人が、いきなり③④に行きたがる</h3>
+    <p>「お金を稼ぎたい」「増やしたい」というアプローチは、非常に多いものです。しかし<b>これは難易度が高く、そもそも成立しません。</b></p>
+    <p>例外的に見える人（たとえば投資で大きく稼いだ人）も、詳しく話を聞くと、実際にはこの順番を踏んでいることがほとんどです。</p>
+
+    <h3>「使う」は、お金でなくてもいい</h3>
+    <blockquote>
+      <p>②の「使う」は、必ずしもお金である必要はありません。<b>時間をかけたいのであれば、時間でもいい。</b></p>
+    </blockquote>
+
+    <div class="callout">
+      <span class="k">この記事の重点</span>
+      <p>①「貯める」＝<b>貯蓄のうつわ</b>と、②「使う」＝<b>受容のうつわ</b>。この2つが土台です。</p>
+      <p>③「稼ぐ」＝流入のうつわは、①②が育っていないとそもそも成立しません（→ <a href="#s6">06 なぜこの順番なのか</a>）。</p>
+    </div>
+  </section>
+
+  <!-- ============ 3 ============ -->
+  <section id="s3">
+    <div class="eyebrow">03 ／ 1つめのうつわ</div>
+    <h2 class="sec">貯蓄のうつわ ──<br>保っていられる量</h2>
+
+    <h3>定義</h3>
+    <div class="bignote">
+      ここ半年で「勝手に貯まった」お金の平均。
+      <span class="s">我慢して積み上げた金額ではなく、普通に生活した結果として自然に残った金額が、そのままこのうつわの大きさになります。</span>
+    </div>
+    <p>ポイントは<span class="hl">「勝手に」</span>という部分です。</p>
+    <p>節約そのものを楽しんで貯めたお金も、ここに含まれます。「節約が楽しい」と感じられる状態は、我慢ではなく、<b>貯蓄のうつわが機能している現れ</b>と捉えます。</p>
+
+    <h3>大きい人・小さい人</h3>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>大きい人</th><th>小さい人</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>銀行残高が大きい</td>
+            <td>稼いだ分がそのままなくなる</td>
+          </tr>
+          <tr>
+            <td><b>「お金は使ったら増える」</b>という感覚を持っている</td>
+            <td>入ってきたお金を使い切ってしまう</td>
+          </tr>
+          <tr>
+            <td>手元にお金があることが、焦りではなく<b>安心</b>につながっている</td>
+            <td>収入があっても、月末には何も残らない状態が続く</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sm">「お金は使ったら増える」という感覚を口にできる時点で、このうつわは育っています。</p>
+
+    <blockquote class="big">
+      <p><b>収入が高いのに貯蓄のうつわが小さい、というケースは珍しくありません。</b></p>
+      <p>「めっちゃ稼いでいるのに全然貯金がない」人は、流入のうつわが大きく貯蓄のうつわが小さい状態。お金に対する概念のどこかに、ゆがみがある可能性があります。</p>
+    </blockquote>
+
+    <h3>育て方 ── 3つのワーク</h3>
+    <p>理屈より先に、まず手を動かすことが求められる領域です。</p>
+
+    <h4>ワーク① 収支を見る</h4>
+    <blockquote>
+      <p><b>目的は「増やすこと」ではなく、まず現状を知ること。</b>「いまいくら持っているか」「何に使っているか」を把握するところから始めます。</p>
+    </blockquote>
+    <p>お金の不安がある人は、収支を見ていないことが多いものです。目隠しをしたまま綱渡りをするようなもので、怖くなって当然です。</p>
+    <div class="bignote">
+      見ているだけでお金は減らない。
+      <span class="s">見るのをやめた瞬間に、なくなっていく。</span>
+    </div>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>手順</th><th>内容</th><th>頻度</th></tr></thead>
+        <tbody>
+          <tr><td><b>1</b></td><td>キャッシュを把握する</td><td>半年ごと</td></tr>
+          <tr><td><b>2</b></td><td>将来決まっている支出を書き出す</td><td>半年ごと</td></tr>
+          <tr><td><b>3</b></td><td>月単位で総収入と総支出を記録する</td><td>毎週</td></tr>
+          <tr><td><b>4</b></td><td>レシートワーク</td><td>できる日はなるべく</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><b>1. キャッシュを把握する</b><br>
+    現金・口座残高に加えて、<b>数日以内にすぐ現金化できるもの</b>をすべて書き出します。金額の大小は問いません。<span class="hl">増えていることが重要なのではなく、記録していることが重要</span>です。</p>
+
+    <p><b>2. 将来決まっている支出を書き出す</b><br>
+    ローン・奨学金・税金・保険料・リボ払いなど、これから支払う予定が決まっているものを、<b>期間・合計金額・月々の支払い</b>の単位で書き出します。「思ったより使っていた」「急な出費で慌てた」の多くは、これをやっていないことが原因です。</p>
+
+    <p><b>3. 月単位で総収入と総支出を記録する</b><br>
+    <b>月単位で、入ったお金と出ていったお金の詳細がわかれば、フォーマットは何でもかまいません。</b>ノートでも家計簿アプリでも表計算でも大丈夫です。</p>
+    <p class="sm">月に1回、<b>ミニマムライフコスト</b>（自分や家族が健康的に生きるために最低限必要な生活費）を計算します。「感覚でわかる」という人もいますが、原則として計算したほうがよく、<b>定期的に計算する習慣そのもの</b>がこのうつわを保ちます。</p>
+
+    <p><b>4. レシートワーク</b><br>
+    お買い物を振り返り、<b>自分がどんな感情でお金を使っているか</b>を答え合わせします。</p>
+    <div class="callout">
+      <span class="k">手順</span>
+      <ol>
+        <li>レシートを見る</li>
+        <li><b>「これを買って、自分がどれぐらい喜んだ？」</b>を確認する</li>
+        <li>喜び以外の感情も言語化して、その<b>割合</b>を書き出す</li>
+        <li><b>なぜその割合になったのか</b>を振り返り、言語化する</li>
+        <li><b>どうすれば次は喜びが増えるか</b>を考える</li>
+        <li>1週間以上経ったあと、<b>使う前／使う最中／使った後</b>で喜びの割合がどう変化したかを振り返る</li>
+      </ol>
+    </div>
+
+    <p>よくある「喜んでいない買い物」には、こんなパターンがあります。</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>パターン</th><th>起きやすいこと</th></tr></thead>
+        <tbody>
+          <tr><td>焦っていたときに買った</td><td>だいたいうまくいっていない</td></tr>
+          <tr><td>衝動買い</td><td>理由が後付けになりやすい</td></tr>
+          <tr><td>安かったから買った（半額など）</td><td>結局使わず捨てることもある</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <blockquote>
+      <p><b>失敗していいことにする。</b>データを取って改善することが目的です。良かった部分と良くなかった部分を分けて考え、次はどうすれば喜びにつながるかを考えます。</p>
+    </blockquote>
+
+    <h4>ワーク② 不用品を捨てる・売る</h4>
+    <ul>
+      <li><b>時期を選ばず、いつでも行う</b></li>
+      <li>何かを捨てる、部屋を片付ける、きれいにする ── <b>それだけでうつわは育つ</b></li>
+      <li>このサイクルを回し続けることが、結果として流入を増やす循環につながる</li>
+    </ul>
+
+    <h4>ワーク③ モヤモヤを書き出す</h4>
+    <p>紙に書いても、音声（ボイスメモなど）でもかまいません。ただし<b>最終的に「文字として読める形」にすること</b>が大切です。</p>
+    <p>とくに効果があるのは、<span class="hl">不快な感情</span>。不安・焦り・悲しみ。これらを書き出すことで、<b>自分の内面に対する現状把握力</b>が育ちます。</p>
+    <blockquote class="big">
+      <p><b>深掘りしなくて大丈夫です。</b></p>
+      <p>不安や悲しみを見つけたとき、「なぜそう感じたのか」を掘り下げる必要はありません。掘り下げたい人はしてもかまいませんが、基本的には<b>その感情に気づくだけで十分な効果があります。</b></p>
+      <p>原因を突き止めることが目的ではなく、いま自分の中に何があるのかを認識することが目的です。</p>
+    </blockquote>
+
+    <h3>よくある誤解 ──「貯金すること」ではない</h3>
+    <blockquote>
+      <p><b>貯蓄のうつわを広げる＝貯金額を増やすこと、ではありません。</b></p>
+      <p>やることは「支出の現在地を正確に見ること」と「要らないものを手放すこと」の2つ。<b>「毎月いくら貯める」という目標設定とは別物</b>です。うつわが広がれば、結果として残る金額が変わる、という順番になります。</p>
+    </blockquote>
+
+    <h3>このうつわを育てると ── お金の不安が消える</h3>
+    <div class="bignote">
+      これが、貯蓄のうつわで最も大事な効果。
+      <span class="s">収支を見る／無駄な支出をカットする／要らないものを捨てる／モヤモヤを書き出す。これらを実行するだけで、不安は消えます。</span>
+    </div>
+    <p>逆に言えば、<b>お金の不安が続いている状態は、この工程を通っていないサイン</b>として読めます。</p>
+
+    <p>なぜ不安が消えるのか。3つのワークは、いずれも<b>「いま実際にどうなっているか」を直視する作業</b>でできているからです。</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>ワーク</th><th>何の現状を把握するか</th></tr></thead>
+        <tbody>
+          <tr><td>① 収支を見る</td><td><b>お金</b>の現状</td></tr>
+          <tr><td>② 不用品を捨てる</td><td><b>持ち物</b>の現状</td></tr>
+          <tr><td>③ モヤモヤを書き出す</td><td><b>自分の内面</b>の現状</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>不安の多くは、現実を見ていないところから生まれます。<span class="hl">現状を把握する力が育つと、その分だけ不安が消えていきます。</span></p>
+
+    <h3>「不用品を捨てる」は、買い物の答え合わせでもある</h3>
+    <p>ワーク②には、貯蓄のうつわを育てる以外に<b>もう一つの機能</b>があります。</p>
+    <blockquote>
+      <p>実際に手元にあるモノを見て「これは要らなかった」と気づくとき、それはそのまま<b>「この支出には喜びがなかった」という答え合わせ</b>になっています。一度そう認識すれば、次から同じ種類の支出にエネルギーを流さなくなります。</p>
+    </blockquote>
+    <p><b>物質として持っているものを見て必要かどうかを判断するほうが、正確に自分の基準を捉えやすい</b>ので、「自分の喜びや感情がよく分からない」という方にこそおすすめのワークです。</p>
+
+    <h3>事例</h3>
+    <div class="qa">
+      <h4>事例① 大学生時代 ── うつわがほぼゼロの状態</h4>
+      <p class="sm">仕送り＋バイト代で月20万円程度。全額を使い切り、収支はほぼプラスマイナスゼロ。衣料品に月5万円ほど使っていた。</p>
+      <p><b>転機</b> ── 水漏れによって服を処分せざるを得なくなり、初めて本格的に不用品を手放した。</p>
+      <p><b>結果</b> ── 積み上げてきた不用品を捨てたことで貯蓄のうつわが広がり、<b>保険金が入って貯金が50万円ほど増える</b>という現象が起きた。</p>
+      <blockquote>
+        <p>書き換わった前提：「買ったものでも要らないものはある。物質的に満たされていても、要らなくなったら捨てればいい」</p>
+      </blockquote>
+    </div>
+
+    <div class="qa">
+      <h4>事例② 専業主婦時代 ── 3年半で200万円超</h4>
+      <p class="sm">パートで月11万〜18万円の収入、支出は月8万円（車のローンを含む）。格安SIMへの変更、時短料理、献立を立てて1週間で食材を使い切る、といったことをしていた。</p>
+      <p><b>重要な点</b> ── <span class="hl">これは我慢ではありませんでした。</span>楽しんでやっていたら自然に貯まっていった、という状態です。当時はそもそも使いたいと思っていなかった。</p>
+      <p>貯蓄のうつわが <b>50万円 → 200万円</b> に育った事例です。</p>
+    </div>
+  </section>
+
+  <!-- ============ 4 ============ -->
+  <section id="s4">
+    <div class="eyebrow">04 ／ 2つめのうつわ</div>
+    <h2 class="sec">受容のうつわ ──<br>受け取れる・喜びで使える量</h2>
+
+    <h3>定義</h3>
+    <div class="bignote">
+      ここ半年の「喜びのある支出」の平均。
+      <span class="s">支出全体ではありません。「なんでこれを買ったんだろう」「これは別に要らなかった」と感じるものを除いたうえで残る、自分を喜ばせている支出の平均です。</span>
+    </div>
+
+    <h3>定義式</h3>
+    <div class="callout">
+      <span class="k">受容のうつわ</span>
+      <p><b>自己受容 × お金の概念</b></p>
+    </div>
+    <p><b>自己受容</b> ── 受容のうつわは「受け取るうつわ」です。したがって自己受容レベルが高い人は、このうつわが大きくなりやすい。</p>
+    <p><b>お金の概念</b> ── ただし自己受容だけでは測れません。「お金は汚い」「お金を持ったら危険だ」といった<b>お金にまつわる概念（ブロック）を外さない限り、このうつわは大きくなりません。</b>だからこそ足し算ではなく<span class="hl">掛け算</span>になります。</p>
+
+    <h3>大きい人・小さい人</h3>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>大きい人</th><th>小さい人</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>収入が多くても少なくても、焦りがない。</b>状態がフラット</td>
+            <td>お金が入ってきたら「使わないと」と感じる</td>
+          </tr>
+          <tr>
+            <td><b>どんなときも幸せな自分を作れる</b></td>
+            <td><b>自分の好きなもの・喜ぶものがわからない</b></td>
+          </tr>
+          <tr>
+            <td>自分が何をしたら喜ぶかをよく知っている</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sm">同じ状況に置かれても「まったく平気な人」と「どうしようとなる人」に分かれます。この差が、受容のうつわの差です。</p>
+
+    <blockquote class="big">
+      <p><b>受容のうつわが小さいと、流入も止まります。</b></p>
+      <p>お金が使えない。使えないから「使っても大丈夫なのだろうか」と迷う。この状態は潜在意識のレベルでは<span class="hl">「受け取ってはいけない」</span>という前提として働くため、結果として<b>流入そのものが止まる</b>現象が起きやすくなります。</p>
+    </blockquote>
+
+    <h3>育て方 ── 7つのアプローチ</h3>
+
+    <h4>① 自分のやってみたいことに、時間やお金を使う</h4>
+    <p>このうつわを育てる出発点です。たとえば<b>「最後の晩餐で何を食べたいか」を考えて、それを実際に自分に食べさせる。</b></p>
+    <p>予算が厳しければ、<b>価格の安いものから始めてかまいません。</b>チョコレートなど、少ないお金でも購入できるもので試してみます。</p>
+
+    <p>特別な買い物をしなくても、<b>日常の買い物でもできます。</b>複数の候補から選ぶときに「<span class="hl">こんな商品がもっと世の中に広がってほしい</span>」と思えるものを選んで購入する、という方法です。</p>
+    <div class="callout">
+      <span class="k">例：調味料を買うとき</span>
+      <p>❌ 一番安いものを選ぶ</p>
+      <p>⭕️ 特に自分が美味しいと思うもの／応援したいと思える企業のもの／デザインが美しく、使うだけで喜びが増えるもの</p>
+    </div>
+    <blockquote>
+      <p>そして、<b>購入する（お金を払う）ときに「こんな商品が世の中にもっと増えてほしい」という気持ちを込めて購入する。</b></p>
+      <p>同じ金額を払っていても、そこに気持ちを込めるかどうかで意味が変わります。ここがこのワークの要点です。</p>
+    </blockquote>
+
+    <div class="callout">
+      <span class="k">このワークの目的</span>
+      <p><b>1. 「お金は人を喜ばせるものだ」という体感を育てる</b><br>繰り返すことで、知識としてではなく<b>体感として</b>身についていきます。</p>
+      <p><b>2. 自分が何をしたら喜ぶのかを知っている状態を目指す</b><br>他者を介さず、<b>自分で自分を満たすスキル</b>を育てます。</p>
+    </div>
+
+    <h4>② 「いつも使っていない方」に使う ── 入れ替えの原則</h4>
+    <p>このうつわを育てる中核となる考え方です。</p>
+    <blockquote>
+      <p>自分にばかりお金を使う人 → <b>他人</b>を喜ばせるために使う<br>
+      他人にばかりお金を使う人 → <b>自分</b>を喜ばせるために使う</p>
+    </blockquote>
+    <p>これは「<b>有形物／無形物</b>」の軸を足すと、4つの組み合わせで整理できます。自分の支出がどこに偏っているかを確認し、<span class="hl">偏っているところの「反対（対角）」をやってみる</span>のがポイントです。</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>いまの偏り</th><th>やってみること（対角）</th></tr></thead>
+        <tbody>
+          <tr><td>他人 × 有形物</td><td><b>自分 × 無形物</b></td></tr>
+          <tr><td>自分 × 無形物</td><td><b>他人 × 有形物</b></td></tr>
+          <tr><td>自分 × 有形物</td><td><b>他人 × 無形物</b></td></tr>
+          <tr><td>他人 × 無形物</td><td><b>自分 × 有形物</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sm">例：他人にプレゼント（有形物）を買う傾向が強い人は、自分に無形のもの（体験・学び・時間など）を買ってみる。</p>
+
+    <h4>③ 「使う前・使ってる最中・使った後」の3ポイントで見る</h4>
+    <p>ひとつの支出を3つのタイミングに分けて確認します。</p>
+    <ol>
+      <li><b>使う前</b> ── 買う前にワクワクしたか</li>
+      <li><b>使っている最中</b> ── 使っているときに喜びがあったか</li>
+      <li><b>使った後</b> ── 使い終わってから満足があったか</li>
+    </ol>
+    <p>この3ポイントすべてに喜びがある支出を、増やしていきます。</p>
+
+    <h4>④ 答え合わせを反復する</h4>
+    <p>収支を見れば、答えはすでに出ています。</p>
+    <ol>
+      <li>「これは喜びが少ないな」とわかったものは、いったん脇に置く</li>
+      <li>喜んだものについては「近い傾向のものを買ってみようか」と広げる</li>
+      <li>また答え合わせをする</li>
+      <li>1〜3を繰り返す</li>
+    </ol>
+    <blockquote><p><b>この反復運動そのものが、受容のうつわを育てます。</b></p></blockquote>
+
+    <h4>⑤ マズローの5段階欲求を「下から」満たす</h4>
+    <p><b>下から満たすのが最も楽</b>とされています。一番下にあるのが<b>食欲・性欲・睡眠欲</b>の3大欲求。多くの人は、このうち1つに強い欲求を持っています。</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>欲求</th><th>満たし方の例</th></tr></thead>
+        <tbody>
+          <tr><td>食欲</td><td>最後の晩餐で食べたいものを食べる</td></tr>
+          <tr><td>睡眠欲</td><td>よく寝る</td></tr>
+          <tr><td>性欲</td><td>ハグする、スキンシップをとる</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sm">欲求は固定ではありません。状況や年齢によって変わっていきます。高校生の頃は3時間睡眠でも平気だった人が、後年は睡眠欲が最も強くなる、といった変化が起きるので、<b>細かく観察し続ける必要があります。</b></p>
+
+    <h4>⑥ 「人を喜ばせようとしない」</h4>
+    <p>他人を喜ばせようとするのは、とても難しいことです。相手は思ったとおりには動かないからです。</p>
+    <blockquote>
+      <p>したがって、<b>まずは自分だけでいい。</b>これをやっておくと、人の反応が気にならなくなってきます。</p>
+    </blockquote>
+
+    <h4>⑦ お金がないなら「時間」でやる</h4>
+    <p>支出でも時間でも、どちらでもかまいません。お金に余裕がなければ、時間でアプローチします。</p>
+    <p class="sm">たとえば職場に行きたくない場合 ── 有給を取らせてあげる。それが難しければ、職場のトイレに3分こもる。昼休みだけ車に逃げる。</p>
+    <blockquote>
+      <p><b>ポイントは「ちょっとずつでいい」こと。</b>規模ではなく、<span class="hl">自分を喜ばせる方向に舵を切ったという事実</span>が効きます。</p>
+    </blockquote>
+
+    <h3>先に外しておきたい思い込み</h3>
+    <p>次のような思い込みを持っている人は、とても多いものです。</p>
+    <ul>
+      <li>「稼いだら楽しくなる・我慢しなくていい」</li>
+      <li>「稼いだらもっと幸せになる」</li>
+      <li>「お金がいっぱいあったら満たされる・楽になる」</li>
+    </ul>
+    <p>この思い込みを先に外すことが、このうつわを育てる目的のひとつです。外れると、前提はこう書き換わります。</p>
+    <div class="bignote">
+      稼げても稼げなくても、<br>どちらでも自分は自分を幸せにできる。
+      <span class="s">結果が出ても出なくても幸せでいられる状態を、先に、少しずつ作っておく。この状態があると、流入のうつわに取りかかって大きく稼ぐことになっても、強制終了や摩擦が起きにくくなります。</span>
+    </div>
+    <p>また、自分が喜ぶことを数多く知っていると、他人が幸せそうにしているのを見ても「この人はこれが幸せなんだな」と受け止められるようになります。<b>比較の対象ではなくなる</b>、という変化です。</p>
+
+    <h3>判断基準は「値段」ではなく「喜ぶかどうか」</h3>
+    <blockquote>
+      <p>高いものを買えばいい、という話ではありません。大事なのは<b>「それが自分を喜ばせるかどうか」だけ</b>です。</p>
+    </blockquote>
+    <p>普段そこまで所有欲がなくても「これは家に置いておきたい」と感じたものを買ってあげる。すぐ近くのスーパーで買えるようなものでもかまいません。<b>そういう細かいものを手に入れてあげる積み重ね</b>が効きます。</p>
+
+    <h3>いちばん間違いやすい落とし穴 ── 喜びの「先延ばし」</h3>
+    <p>典型例は<b>「運用で増えたお金を、自分の好きなものや好きなことに使いたい」</b>という考え方です。</p>
+    <blockquote class="big">
+      <p>これは、<b>自分の好きなものを先延ばししている</b>状態にあたります。潜在意識のレベルでは<span class="hl">「どれだけ稼いでも、自分の好きなことはさせてあげません」</span>という指示を出し続けていることになります。</p>
+      <p>そのため、増えても・入ってきても、自分にメリットが生まれません。</p>
+    </blockquote>
+    <div class="bignote">
+      先に自分の好きなことをさせてあげると、増えていく。
+      <span class="s">喜ぶほうが先。</span>
+    </div>
+    <p class="sm">例外もあります。投資先が「本当に好きな商品だから応援したい」「それが楽しそうだから」という動機であれば、それは喜びのある支出なので問題ありません。判断を分けるのは<b>目的</b>です。</p>
+
+    <h3>実は、このうつわが一番めんどくさい</h3>
+    <p>3つのうつわの中で、最も手間がかかるのがここです。理由は<b>瞬間瞬間で、自分が喜ぶものが変わるから。</b></p>
+    <p>昨日まで一緒にコーヒーを飲むのが好きだった人が、急にワインを飲みたいと言い出す ── そういう変化が普通に起きます。</p>
+    <blockquote class="big">
+      <p>だからこそ必要なのは、<b>今の自分に嘘をつかないこと。</b></p>
+      <p>「前はこうだったから」と今の自分に耳を傾けないと、このうつわは育ちません。</p>
+    </blockquote>
+  </section>
+
+  <!-- ============ 5 ============ -->
+  <section id="s5">
+    <div class="eyebrow">05 ／ 3つめのうつわ</div>
+    <h2 class="sec">流入のうつわ ──<br>稼げる量</h2>
+
+    <div class="note">
+      <h2>⚠️ このうつわから手をつけてはいけません</h2>
+      <p>貯蓄・受容のうつわを育てないままここに取り組むと、<b>必ず戻されます。</b>理由はこのあと詳しく書きます。</p>
+    </div>
+
+    <h3>定義</h3>
+    <div class="bignote">
+      ここ半年の収入＋臨時収入を含めた平均。
+      <span class="s">いわゆる「月商」にあたります。給与だけでなく、入ってきたお金全体の平均で測るのがポイントです。</span>
+    </div>
+
+    <h3>大きい人・小さい人</h3>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>大きい人</th><th>小さい人</th></tr></thead>
+        <tbody>
+          <tr><td>シンプルに収入が多い</td><td><b>自ら低収入の職を選ぶ</b></td></tr>
+          <tr><td><b>配偶者が稼いでいる</b></td><td><b>稼ぎが増えても、急な出費やトラブルで消える</b></td></tr>
+          <tr><td><b>親が裕福</b></td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sm">配偶者や親の要素が含まれるのは、このうつわが「自分の労働の対価」ではなく<b>「自分のところに流れ込んでくる量」</b>を測るものだからです。</p>
+    <blockquote>
+      <p>ここで挙がっているのは「稼げない人」ではなく<span class="hl">「受け取らない人」</span>です。<b>能力の問題ではなく、うつわの問題</b>として捉えます。</p>
+    </blockquote>
+
+    <h3>育て方 ── 5つのアプローチ</h3>
+    <div class="callout">
+      <span class="k">前提</span>
+      <p><b>余白ができたら "小さく" 試す。</b>いずれも、貯蓄・受容のうつわで余白ができてから取り組むものです。</p>
+    </div>
+    <ol>
+      <li><b>ただで人の役に立つ／無料で何かをやる</b> ── 対価を求めずに、人の役に立つことをする</li>
+      <li><b>対価以上に働く</b> ── いま受け取っている対価を超える働きをする</li>
+      <li><b>理想の収入の「状態」を先に体感する</b> ── 金額ではなく「状態」から入る</li>
+      <li><b>環境を変える</b> ── より高い水準の職場へ転職する、あるいはビジネスをする</li>
+      <li><b>新しいことを始める</b> ── 思いついたひらめきやアイデアを実現するために行動する</li>
+    </ol>
+    <blockquote>
+      <p>①②③に共通しているのは、<b>「先に出す」という構造</b>を持っていることです。</p>
+    </blockquote>
+
+    <h3>★最重要 ── このワークは「余裕がある状態」でしか効かない</h3>
+    <p>これは流入のうつわを扱ううえで、最も重要な前提です。</p>
+    <p>上記のワークは、<b>心・時間・物理的に余白がある状態でやると、驚くほどスムーズにうまくいきます。</b>しかし ──</p>
+    <div class="bignote">
+      貯蓄・受容のうつわから逃げたくてこちらに手を出すと、必ず戻される。
+    </div>
+
+    <p>具体的には、こうした現実が起きやすくなります。</p>
+    <ul>
+      <li>売上が立たない</li>
+      <li>家族や自分が体調を崩す</li>
+      <li>急な出費が多発する</li>
+      <li>時間・お金・精神的な自由がなくなる</li>
+      <li>働き方は自由だが、結果が出ないためにむしろ不自由になる</li>
+      <li>周囲にサポートを求めず、一人で抱え込む</li>
+      <li>仕事が来ても、どこまで自分ができるのか不安になる</li>
+      <li>自由なはずなのに、不安や焦り・虚無感に襲われる</li>
+    </ul>
+    <blockquote class="big">
+      <p>これらに共通しているのは、<b>「自由になるために稼ぐ」という方向に動いたにもかかわらず、むしろ不自由になる</b>という現象です。</p>
+      <p>そしていずれも、次のことを突きつけてきます。<br>
+      「自分を大事にしていないよね」<br>
+      「お金の不安を無視しているよね」<br>
+      「将来への不安を無視しているよね」</p>
+    </blockquote>
+
+    <h4>なぜこうなるのか ──「既知の安全」に引き戻される</h4>
+    <p>これは、<b>自分の安心を保てる範囲を超えた自由が、脅威になっている状態</b>です。</p>
+    <p>貯蓄・受容のうつわが十分に育っていない状態で流入のうつわに取り組むと、無意識のレベルで、脳や身体がこう捉えてしまいます。</p>
+    <div class="bignote">
+      自分の安心を保てる範囲を超えた自由は、脅威である。
+      <span class="s">その結果、範囲の先にある「未知の幸福」よりも、慣れた苦しみである「既知の安全」のほうに戻ろうとします。</span>
+    </div>
+
+    <blockquote class="big">
+      <p><b>流入のうつわのワークは、貯蓄・受容のうつわで作った「余裕」を原資にして行うもの。</b></p>
+      <p>貯蓄・受容のうつわのワークは、そもそも<span class="hl">余裕を持たせるためのワーク</span>です。「溢れた分」で流入のワークをやる、という順序になります。</p>
+    </blockquote>
+
+    <p><b>「自分を愛せない人は、本当の意味で人を愛すことはできない」</b>という言葉も、これと同じ構造を表しています。</p>
+    <p>働いて稼ぐということは、<b>「誰かを助けたり喜ばせた対価を受け取ること」</b>とも考えられます。他者を満たす前に、まず自分が満たされていないと、「自分を安心させて満たす」という課題に戻ることになってしまうのです。</p>
+  </section>
+
+  <!-- ============ 6 ============ -->
+  <section id="s6">
+    <div class="eyebrow">06</div>
+    <h2 class="sec">なぜこの順番なのか ──<br>連動の理屈</h2>
+
+    <p>3つのうつわは独立していません。<b>それぞれが次のうつわの前提条件</b>になっています。</p>
+
+    <h3>① 貯蓄を飛ばすと、流入が広がらない</h3>
+    <p>貯蓄のうつわが育っていないと、「使ってもなくなる」という感覚が残ります。その状態で流入を広げるフェーズに入ると、<b>「稼いでもまたどんどんなくなる」という意識</b>になります。</p>
+    <blockquote class="big">
+      <p>稼いでも全部なくなるのなら、稼がないほうが楽になる。だから貯蓄のうつわが小さい人にとっては、<span class="hl">そもそも稼ぐこと自体がしんどくなる</span>のです。</p>
+    </blockquote>
+
+    <h3>② 貯蓄 → 受容：不用品を手放す＝買い物の答え合わせ</h3>
+    <p>貯蓄のうつわのワークである「不用品を手放す」は、そのまま受容のうつわの精度を上げます。実際にモノを見て「これは要らなかった」と気づくことが、「この支出には喜びが少なかった」という答え合わせになるからです。</p>
+
+    <h3>③ 貯蓄 → 受容：貯蓄があるから「今」買える</h3>
+    <p>貯蓄のうつわが育っていれば、欲しいものが出てきたときに「今の収入では買えない」と止まらず、<b>購入できる範囲で買ってあげる</b>判断ができます。</p>
+
+    <h3>④ 受容 → 流入：受け取れないものは入ってこない</h3>
+    <p>受容のうつわが小さいと、お金を使えません。使えないから迷ったり不安になったりする。これは潜在意識のレベルでは<b>「受け取ってはいけない」</b>という前提として働き、<span class="hl">流入そのものを止めます。</span></p>
+
+    <h3>⑤ 受容 → 流入：喜びを体感するとビジネスが速い</h3>
+    <p>稼ぐ準備や起業準備をするよりも、<b>自分の喜びに使うことを先にやったほうが速い</b>のです。</p>
+    <blockquote>
+      <p>「お金はこんなに人を喜ばせるものなのだ」という体感が先にあると、その後のビジネスは非常に快適になります。お金の不安を取り除いた後のビジネスと、抱えたままのビジネスでは、進み方がまったく違います。</p>
+      <p>抱えたままだと、摩擦や消耗の激しい<b>「向かい風」</b>の中を進むことになるので、トラブルやアクシデントで強制終了が起きたり、病気になる人が多くなります。</p>
+    </blockquote>
+  </section>
+
+  <!-- ============ 7 ============ -->
+  <section id="s7">
+    <div class="eyebrow">07</div>
+    <h2 class="sec">バランスが崩れると、<br>うつわは壊れる</h2>
+
+    <p>3つのうつわはバランスよく育てないと、<b>どこかのうつわが壊れます。</b></p>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>崩れ方</th><th>具体例</th><th>何が起きるか</th></tr></thead>
+        <tbody>
+          <tr><td><b>流入だけが大きい</b></td><td>宝くじの高額当選</td><td>受け皿がないところに大量に流れ込むため、うつわが壊れる</td></tr>
+          <tr><td><b>受容が育っていない</b></td><td>小学生に毎日100万円渡す</td><td>使い方がわからないので、紙飛行機にしたりおもちゃにして使う。<b>うつわがないから使えない</b></td></tr>
+          <tr><td><b>流入が小さいのに受容が大きい</b></td><td>まったくマネタイズしない人／受け取らない人</td><td>現実が変わらない</td></tr>
+          <tr><td><b>貯蓄が小さいのに流入が大きい</b></td><td>稼いでいるのに全然貯金がない人</td><td>お金に対する概念のどこかにゆがみが生じている</td></tr>
+          <tr><td><b>受容が小さいのに流入が大きい</b></td><td>流入が1億でも受容が30万しかない状態</td><td>耐えられず溢れてしまう</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="bignote">
+      小さいうつわに大量に注ぐと、壊れる。
+      <span class="s">逆に、受け皿が小さいと、注ぐ側は何度も繰り返さなければならず、非常に大変になります。</span>
+    </div>
+  </section>
+
+  <!-- ============ 8 ============ -->
+  <section id="s8">
+    <div class="eyebrow">08</div>
+    <h2 class="sec">幸せなお金持ち＝<br>バランスが「自分仕様」</h2>
+
+    <p>3つのうつわに、<b>正解の比率はありません。</b></p>
+
+    <div class="bignote">
+      幸せなお金持ちとは、<br>3つのうつわのバランスが<br>完全に「自分仕様」になっている人。
+    </div>
+
+    <p>他人のバランスを見て「あの人は流入も貯蓄も大きくていいな」「自分は何か違うんじゃないか」と悩むのは、<b>意味のない比較</b>になります。</p>
+
+    <h3>「貯金がないほうが心地よい」人もいる</h3>
+    <p>貯蓄を厚く持つより、流入したお金をどんどん回していくほうが心地よい、という人も実際にいます。<b>それはそれで正解</b>です。</p>
+
+    <h3>顕在意識より、潜在意識のほうが強い</h3>
+    <blockquote class="big">
+      <p>自分にとって心地よいバランスは、<b>頭で考えているものより、潜在的に感じているもののほうが強い。</b></p>
+      <p>だから「こうあるべき」ではなく、<span class="hl">実際にどう感じるか（特に体感）</span>で判断します。</p>
+    </blockquote>
+  </section>
+
+  <!-- ============ 9 ============ -->
+  <section id="s9">
+    <div class="eyebrow">09</div>
+    <h2 class="sec">完璧はない ──<br>高速で回し続けるもの</h2>
+
+    <p><b>完璧な自己受容も、完璧に育ち切った貯蓄のうつわも存在しません。</b></p>
+    <p>もし「貯蓄のうつわが50万円で完璧です」と決めてしまえば、そこで終わってしまいます。3つのうつわは到達点ではなく、<span class="hl">回し続けるもの</span>です。</p>
+
+    <div class="callout">
+      <span class="k">回し方</span>
+      <p><b>不安になったら</b> → 貯蓄のうつわを育てる</p>
+      <p><b>不安が落ち着いたら</b> → 受容のうつわを育てる</p>
+      <p><b>余白・余裕ができたと感じたら</b> → 溢れた分で流入の育て方をやってみる</p>
+      <p><b>また不安になったら</b> → 戻る</p>
+    </div>
+    <p>この往復を続けます。<b>日々このサイクルを高速で回すことで、うつわは広がっていきます。</b></p>
+
+    <h3>意識は「波」── 一定にはならない</h3>
+    <p><b>常に喜びのある状態を保つことはできません。</b>感情の揺れは、生きている限りなくなりません。</p>
+    <blockquote class="big">
+      <p>「正解か不正解か」という二択のルートは存在しません。<b>両方にメリットもデメリットもあります。</b></p>
+      <p>したがってこのワークは、「ずっと幸せな状態」を目指すためにやるのではなく、<span class="hl">「どちらでも大丈夫な自分」を育てるため</span>にやります。</p>
+    </blockquote>
+    <p>意識も波です。行動の波と感情の波がある。<b>コントロールはできない</b>ので、「こういう波が来たから、今はこれをやっておこう」という見方をするのがおすすめです。</p>
+
+    <h3>不安な日の処方</h3>
+    <p>朝起きて強い不安に苛まれている、という日があります。そういうときの手順です。</p>
+    <div class="callout">
+      <ol>
+        <li>掃除をする、何かを捨てる</li>
+        <li><b>現状把握</b> ── 何がもやもやしているのか、何が不安かを書き出す</li>
+        <li>書き出したら、<b>解消しなくてもかまいません</b>（したければしてもよい）</li>
+        <li>「そうか、それが不安だったんだね」とわかったら、そのまま置いておく</li>
+        <li>少し自分が喜ぶようなことをやらせてあげる</li>
+      </ol>
+    </div>
+    <blockquote>
+      <p><b>よくある誤解</b> ── 「満たされた状態がずっと続く」と思い込んでいる人が多いのですが、実際には<b>ぐるぐる回り続けるのが常態</b>です。</p>
+    </blockquote>
+  </section>
+
+  <!-- ============ 10 ============ -->
+  <section id="s10">
+    <div class="eyebrow">10</div>
+    <h2 class="sec">自分のうつわを測る<br>2つのゲーム</h2>
+
+    <h3>ゲーム① 1億円ゲーム</h3>
+    <p>1億円を何にどう配分するかを書き出すワークです。<b>配分の比率が、そのまま3つのうつわの大きさを映します。</b></p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>ゲーム内での配分</th><th>対応するうつわ</th></tr></thead>
+        <tbody>
+          <tr><td><b>貯蓄に回して残った金額</b>が大きい</td><td>貯蓄のうつわが大きい</td></tr>
+          <tr><td><b>自分のために使った金額</b>が大きい</td><td>受容のうつわが大きい</td></tr>
+          <tr><td><b>誰かのために使った金額</b>が大きい</td><td>流入のうつわが大きい</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="qa">
+      <p class="q">夫婦で使うもの・家に使うものは「自分」「二人」どちらに数えますか？</p>
+      <blockquote><p><b>自分</b>として数えます。</p></blockquote>
+    </div>
+    <div class="qa">
+      <p class="q">欲しいものがあっても、貯金を崩すことになるので買えません。</p>
+      <blockquote>
+        <p>その状態だと、お金は回ってきません。<b>先に出してあげる</b>必要があります。これは「貯金は増えない」という前提に立っているために起きています。<span class="hl">使えば増えます。</span></p>
+      </blockquote>
+    </div>
+    <div class="qa">
+      <p class="q">全額を運用に回す、という配分でした。これはどのうつわですか？</p>
+      <blockquote>
+        <p>まず<b>運用の目的</b>を確認します。「増えたお金で好きなことをしたい」という動機であれば、それは<b>喜びの先延ばし</b>にあたります。一方、投資先そのものを応援したい・楽しそうだという動機であれば問題ありません。</p>
+      </blockquote>
+    </div>
+
+    <h3>ゲーム② 月収3倍のゲーム</h3>
+    <p>月収が3倍になった状態を想像し、<b>どんな感覚が湧き上がるか</b>を見ます。いま流入のうつわを広げるべきタイミングかどうかを判定するワークです。</p>
+    <blockquote class="big">
+      <p>見るのは「何をするか」「どう思うか」という<b>内容ではなく</b>、<span class="hl">快・不快のどちらかという反応</span>です。</p>
+      <p>同じお題でも「なんだか怖い」と感じる人と「こんなことができて嬉しい」と感じる人に分かれます。この反応の差が、いまいるフェーズを示します。</p>
+    </blockquote>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>パターン</th><th>反応</th><th>判定</th></tr></thead>
+        <tbody>
+          <tr><td><b>A</b></td><td>快適 ＋ ブロックあり</td><td>まだ広げる段階ではない</td></tr>
+          <tr><td><b>B</b></td><td>快適 ＋ ブロックなし</td><td>🎯 いまが広げどき</td></tr>
+          <tr><td><b>C</b></td><td>不快 ＋ ブロックあり</td><td>まだ広げる段階ではない</td></tr>
+          <tr><td><b>D</b></td><td>不快だが仕事は楽しい</td><td>いまの収入が適正収入</td></tr>
+          <tr><td><b>E</b></td><td>快も不快もない</td><td>想像力の問題。判定不能</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>A：快適 ＋ ブロックあり</h4>
+    <p>該当するブロックは「お金があったら楽になる」「稼いだら楽していい」「稼いだら我慢しなくていい」「稼いだらここから抜けられる」など。いずれも<b>「稼いだら〜していい」という条件つきの構造</b>を持っています。</p>
+    <div class="bignote">
+      「AだったらB」の法則 ── Bを先にやる。
+      <span class="s">潜在意識の仕組みでは、「条件AだったらBしていい」という形になっているものは、Bを先にやってあげると、その状態に近づきます。</span>
+    </div>
+    <p>したがって、稼いでいないうちから、いま自分が楽ではない状態をできるだけ減らしていくことに注力します。①何を我慢しているのかを書き出す ②何が楽ではないのかを書き出す ③それをどうやったら回避できるかを考え、実行する。</p>
+
+    <h4>B：快適 ＋ ブロックなし → 🎯 広げどき</h4>
+    <p>このうつわを広げる<b>完全なチャンス</b>にあたります。<b>このタイミングで広げないと、逆に事業が停滞し始めることがあります。</b></p>
+    <div class="callout">
+      <span class="k">処方① 理想の収入の「状態」を先に体感する</span>
+      <p>理想の収入を得ているときの自分について、<b>どんなものを持っているのか／どこに住んでいるのか／誰といるのか</b>の3点を書き出します。書き出したら、それを手に入れるために行動してみる。<b>金額ではなく「状態」を先に作りにいく</b>のがポイントです。</p>
+      <span class="k o">処方② 環境を変える</span>
+      <p>努力を続けているのに収入が上がらない場合、それは<b>いまの環境が流入のうつわに合っていない</b>というサインです。<b>生息場所を変える</b>（住む場所が難しくても、通う場所を変えるのは有効）、<b>教わる相手を変える</b>。</p>
+    </div>
+
+    <h4>C：不快 ＋ ブロックあり</h4>
+    <p>該当するブロックは「稼いだら大変になる」「仕事はしんどい」「我慢しないと稼げない」「稼ぐのは難しい」など。この状態は<b>労働というものを我慢しすぎている</b>ことの現れです。</p>
+    <blockquote>
+      <p><b>処方：いまの職場で「楽する方法・サボる方法」を考える。</b></p>
+      <p>いま何らかの形で働いている ── それ自体が<b>非常に恵まれた条件</b>です。実験する場があるということだから。トイレに逃げ込む、有給を取る、上司に相談してみる、辞めて違うところへ行ってみる。</p>
+      <p>働いていない方は家庭で行います。「主婦だからこれをやらされている」と感じている項目について、その環境の中で楽しむ方法・楽をする方法を試すと、ブロックが外れてきます。</p>
+    </blockquote>
+
+    <h4>D：不快だが「仕事は楽しい」 → いまが適正収入</h4>
+    <p>この場合、<b>いまの収入が適正収入</b>であり、流入のうつわのバランスがかなり取れている状態です。<b>いまは上げどきではありません。</b></p>
+    <p>上げどきに移行したい場合は、<b>貯蓄・受容のうつわを育てます。</b>それらが育つと、自然に流入のうつわを育てるフェーズに入ります。</p>
+
+    <h4>E：快も不快もない → 想像力の問題</h4>
+    <p>想像しても何も感じない場合、判定材料が得られません。</p>
+    <blockquote>
+      <p><b>処方：月商3倍の人を実際に探して見る。</b>自分の月商の3倍くらい稼いでいる人を探し（ネット・YouTube・ブログなど、メディアで構いません）、<b>その人を見て、快なのか不快なのかを見ます。</b></p>
+      <p>他人は自分のメガネを通して見ています。したがって、<span class="hl">月商3倍の人がどう見えるかは、自分の潜在意識が他者に落とした投影</span>にあたります。それを読み取ります。</p>
+    </blockquote>
+  </section>
+
+  <!-- ============ 11 ============ -->
+  <section id="s11">
+    <div class="eyebrow">11</div>
+    <h2 class="sec">実践チェックリスト</h2>
+
+    <h3>① 貯蓄のうつわ</h3>
+    <div class="callout">
+      <span class="k">ワーク① 収支を見る</span>
+      <ul>
+        <li>動かせるキャッシュを書き出した（半年ごと）</li>
+        <li>将来決まっている支出を書き出した（半年ごと）</li>
+        <li>月単位で総収入と総支出を記録している（毎週）</li>
+        <li>ミニマムライフコストを計算した（月1回）</li>
+        <li>レシートワークをやった</li>
+        <li>不要な固定費をカットした</li>
+      </ul>
+      <span class="k">ワーク② 不用品を捨てる・売る</span>
+      <ul>
+        <li>不用品を捨てた・売った</li>
+        <li>「喜びのない支出」を答え合わせした</li>
+      </ul>
+      <span class="k">ワーク③ モヤモヤを書き出す</span>
+      <ul>
+        <li>モヤモヤ（不安・焦り・悲しみ）を書き出した</li>
+        <li>書き出したものを認識した</li>
+      </ul>
+    </div>
+
+    <h3>② 受容のうつわ</h3>
+    <div class="callout">
+      <ul>
+        <li>自分の好きなもの・喜ぶリストを作った</li>
+        <li>マトリックスで自分の支出の偏りを確認した</li>
+        <li>偏りの対角にあたる支出を1つやってみた</li>
+        <li>最後の晩餐で食べたいものを自分に食べさせた</li>
+        <li>少額のもの（お菓子など）で「自分を喜ばせる」を試した</li>
+        <li>日用品を「世の中に増えてほしい」基準で選んで買った</li>
+        <li>お金をかけず時間でできる「やってみたいこと」をやった</li>
+        <li>使う前・最中・後の3ポイントで喜びを確認した</li>
+        <li>「稼いだら〜になる」系の思い込みを言語化した</li>
+        <li>先延ばしにしている喜びがないか確認した</li>
+        <li>3大欲求のうち自分が強いものを特定した</li>
+        <li>「お金は汚い／危険」系の概念を書き出した</li>
+      </ul>
+    </div>
+
+    <h3>③ 流入のうつわ</h3>
+    <div class="callout">
+      <ul>
+        <li>貯蓄・受容のうつわのワークに充分取り組んでいる</li>
+        <li>小さく無料で何かをやってみる</li>
+        <li>誰かの役に立つことを試してみる</li>
+        <li>理想が叶ったときの体感を先取りしてみる</li>
+      </ul>
+    </div>
+
+    <h3>迷ったときは</h3>
+    <div class="bignote">
+      不安になったら、貯蓄へ戻る。
+      <span class="s">それが、このサイクルのいちばんの入口です。</span>
+    </div>
+  </section>
+
+  </main>
+
+  <footer>
+    <p>この記事は「お金のうつわを育てる習慣コミュニティ」の基礎コンテンツをもとに構成しています。</p>
+    <p class="sig">お金のうつわを育てる習慣コミュニティ／PLAYFUL</p>
+  </footer>
+
+</div>
+
+<a class="totop" href="#top" aria-label="ページ先頭へ戻る">↑</a>
+
+</body>
+</html>
