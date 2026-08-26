@@ -338,7 +338,13 @@ footer .sig{
 <style>
   .toc a{flex-direction:column;align-items:stretch;gap:.15rem;padding:.9rem;}
   .toc .dt{font-size:.7rem;font-weight:800;letter-spacing:.12em;color:var(--red);
-    font-variant-numeric:tabular-nums;}
+    font-variant-numeric:tabular-nums;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;}
+  .badge{
+    display:inline-block;
+    font-size:.62rem;font-weight:800;letter-spacing:.08em;color:var(--ink);
+    border:2px solid var(--ink);border-radius:999px;padding:.08rem .5rem;
+    background:var(--white);white-space:nowrap;vertical-align:.08em;
+  }
   .toc .ttl{font-size:1rem;font-weight:800;letter-spacing:.03em;line-height:1.5;}
   .toc .ttl .arw{color:var(--muted);font-weight:800;}
   .toc .sum{font-size:.8rem;line-height:1.65;color:var(--ink-2);}
@@ -348,10 +354,10 @@ footer .sig{
 <div class="wrap">
   <header class="masthead">
     <div class="eyebrow">お金のうつわを育てる習慣コミュニティ 1期</div>
-    <h1 class="title">レポート<br>一覧</h1>
+    <h1 class="title">レポート一覧</h1>
     <p class="subtitle">Zoom会・作業会で話された内容を、テーマごとにまとめています。</p>
     <div class="note" style="margin-top:1.6rem">
-      <p>各レポートには、アーカイブ動画の<b>再生時間</b>を入れています。気になったところだけ飛んで見られます。</p>
+      <p><span class="badge">アーカイブあり</span> の回は、本文に動画の<b>再生時間</b>を入れています。気になったところだけ飛んで見られます。</p>
       <p style="margin-bottom:0"><b>アーカイブ動画そのものは MOSH のコンテンツから</b>ご覧ください。</p>
     </div>
   </header>
@@ -364,12 +370,12 @@ footer .sig{
         <span class="sum">8つのケースで読む交流会。断れない・しんどくなる・刺激がないと落ち着かない、それぞれを3つの器から読み解きます</span>
       </a></li>
       <li><a href="./20260824/">
-        <span class="dt">2026.08.24</span>
+        <span class="dt">2026.08.24<span class="badge">アーカイブあり</span></span>
         <span class="ttl">8/24 作業会レポート <span class="arw">→</span></span>
         <span class="sum">3つのうつわの全体像、レシートワークの実務Q&amp;A、「頑張るのをやめる」と入ってくる理由 ほか</span>
       </a></li>
       <li><a href="./20260802/">
-        <span class="dt">2026.08.02</span>
+        <span class="dt">2026.08.02<span class="badge">講義スライド</span></span>
         <span class="ttl">8/2 キックオフ講義 <span class="arw">→</span></span>
         <span class="sum">3つのうつわとは何か、3ヶ月のロードマップ、基本ワークの進め方（全29枚）</span>
       </a></li>
