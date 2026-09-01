@@ -1,472 +1,489 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <meta charset="utf-8">
-<title>9/1 第二回講義｜喜びを増やす取り組み</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>9/1 第二回講義｜お金のうつわを育てる習慣コミュニティ</title>
 <style>
 :root{
-  --cream:#F3E8DD; --cream-lt:#FAF3EC; --white:#FFFFFF;
-  --ink:#211815; --ink-2:#5C4E44; --muted:#8A7A6D;
-  --red:#E74A25; --blue:#1E44A0; --green:#33A055; --gold:#DCA839;
-  --hl:#F7D9A8;
-  --sans:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic","YuGothic",sans-serif;
-  --bw:3px;
+  --cream:#F3E8DD;
+  --cream-lt:#FAF3EC;
+  --ink:#211815;
+  --red:#E74A25;
+  --blue:#1E44A0;
+  --green:#33A055;
+  --orange:#E1813A;
+  --gold:#DCA839;
+  --muted:#8A7A6D;
 }
-*{box-sizing:border-box;}
-html,body{height:100%;margin:0;}
+*{box-sizing:border-box;margin:0;padding:0}
+
+/* ===== 日本語の改行制御（全スライド共通） ===== */
 body{
-  background:var(--cream); color:var(--ink); font-family:var(--sans);
-  font-weight:700; -webkit-font-smoothing:antialiased;
-  display:flex; align-items:center; justify-content:center;
-  overflow:hidden;
+  word-break:auto-phrase;
+  line-break:strict;
 }
-#stage{
-  width:min(96vw, calc((100vh - 96px) * 16 / 9));
-  aspect-ratio:16/9;
-  position:relative;
+h1,h2,h3,.lead,.quote,.big-note,.eyebrow,.chip,.card .h,.st .w{
+  text-wrap:balance;
 }
+p,li,td,th,.small,.sm,.tx,.ds,.sub,.note{
+  text-wrap:pretty;
+}
+html,body{height:100%;background:#1a1512;overflow:hidden}
+body{
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+  color:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  -webkit-font-smoothing:antialiased;
+}
+#stage{width:1280px;height:720px;transform-origin:center center;position:relative}
 .slide{
-  position:absolute; inset:0;
-  background:var(--white);
-  border:var(--bw) solid var(--ink); border-radius:14px;
-  padding:clamp(1.2rem, 3.4vmin, 2.6rem) clamp(1.4rem, 4.4vmin, 3.4rem);
-  display:none; flex-direction:column; justify-content:center;
-  container-type:inline-size;
-  overflow:hidden;
+  position:absolute;inset:0;
+  background:var(--cream);
+  padding:56px 72px 64px;
+  display:none;
+  flex-direction:column;
 }
-.slide.on{display:flex;}
+.slide.on{display:flex}
 
-/* ---- タイポ（コンテナ幅基準でスケール） ---- */
-.slide{font-size:clamp(13px, 2.15cqw, 30px);}
-.kicker{
-  font-size:.72em; letter-spacing:.16em; color:var(--muted);
-  margin:0 0 .9em; font-weight:800;
-}
-h1{font-size:2.5em; line-height:1.25; margin:0 0 .4em; letter-spacing:.01em;}
-h2{font-size:1.85em; line-height:1.3; margin:0 0 .7em; letter-spacing:.01em;}
-h3{font-size:1.15em; line-height:1.4; margin:1.1em 0 .4em; color:var(--ink-2);}
-p{font-size:1.05em; line-height:1.75; margin:.35em 0;}
-ul{margin:.3em 0; padding-left:1.15em;}
-li{font-size:1.05em; line-height:1.7; margin:.5em 0;}
-li::marker{color:var(--red);}
-.sub{color:var(--ink-2); font-size:.95em; font-weight:700;}
-.hl{background:linear-gradient(transparent 56%, var(--hl) 56%); padding:0 .1em;}
-.accent{color:var(--red);}
-.small{font-size:.85em; color:var(--muted);}
+/* ---------- 共通パーツ ---------- */
+.eyebrow{font-size:20px;letter-spacing:.18em;color:var(--muted);font-weight:700;margin-bottom:14px}
+h1{font-size:62px;line-height:1.25;letter-spacing:.06em;font-weight:800}
+h2{font-size:46px;line-height:1.3;letter-spacing:.05em;font-weight:800}
+h3{font-size:32px;line-height:1.35;letter-spacing:.04em;font-weight:800}
+.lead{font-size:27px;line-height:1.85;letter-spacing:.02em;font-weight:500}
+.small{font-size:21px;line-height:1.75;color:#5C4E44}
+.center{align-items:center;justify-content:center;text-align:center}
+.grow{flex:1;display:flex;flex-direction:column;justify-content:center}
+.mt{margin-top:28px}.mt-s{margin-top:16px}.mt-l{margin-top:44px}
 
-/* ---- パーツ ---- */
-.big{
-  border:var(--bw) solid var(--ink); border-radius:10px;
-  background:var(--cream-lt);
-  padding:.85em 1.05em; margin:.7em 0;
-  font-size:1.35em; line-height:1.55;
+.block{border:5px solid var(--ink);border-radius:8px;background:var(--cream-lt)}
+.chip{
+  display:inline-block;border:4px solid var(--ink);border-radius:6px;
+  padding:8px 22px;font-size:24px;font-weight:800;letter-spacing:.08em;background:#fff
 }
-.big.red{border-color:var(--red);}
+.hl{background:linear-gradient(transparent 58%, #F7D9A8 58%);padding:0 2px}
+.accent{color:var(--red)}
+
+/* footer */
+.foot{
+  position:absolute;left:72px;right:72px;bottom:22px;
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:16px;color:var(--muted);letter-spacing:.06em;
+}
+.foot .t{font-variant-numeric:tabular-nums}
+body.share .foot .tm{display:none}
+
+/* ---------- テーブル ---------- */
+table{width:100%;border-collapse:collapse;font-size:21px}
+th,td{border:3px solid var(--ink);padding:13px 15px;text-align:left;vertical-align:middle}
+.tight td{padding:9px 15px}
+th{background:var(--ink);color:var(--cream);font-weight:800;letter-spacing:.06em;font-size:20px}
+td.k{font-weight:800;white-space:nowrap;text-align:center;width:230px;background:var(--cream-lt)!important}
+td b{font-weight:800}
+tbody tr:nth-child(odd) td{background:var(--cream-lt)}
+tbody tr:nth-child(even) td{background:#fff}
+
+/* ---------- 2カラム ---------- */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;flex:1;align-content:center}
+.card{border:5px solid var(--ink);border-radius:8px;background:#fff;padding:26px 28px}
+.card .h{font-size:27px;font-weight:800;letter-spacing:.04em;margin-bottom:14px}
+.card ul{margin-left:1.15em;font-size:21px;line-height:1.9}
+.card p{font-size:21px;line-height:1.8}
+
+.hero img{width:100%;height:auto;display:block}
+ul.big{margin-left:1.15em;font-size:26px;line-height:2.05}
+ul.big li+li{margin-top:2px}
+ul.mid{margin-left:1.15em;font-size:23px;line-height:1.9}
+ul.mid li+li{margin-top:8px}
+
 .quote{
-  border-left:8px solid var(--gold); background:var(--cream-lt);
-  padding:.7em .95em; margin:.7em 0; font-size:1.02em; line-height:1.7;
+  border-left:10px solid var(--red);padding:16px 0 16px 26px;
+  font-size:30px;line-height:1.7;font-weight:700;letter-spacing:.03em
 }
-table{border-collapse:collapse; width:100%; margin:.7em 0; font-size:.95em;}
-th,td{border:2px solid var(--ink); padding:.55em .7em; text-align:left; line-height:1.55; vertical-align:top;}
-th{background:var(--ink); color:var(--cream); font-size:.92em; letter-spacing:.05em;}
-td.lbl{background:var(--cream-lt); white-space:nowrap; width:1%;}
-.cols{display:grid; grid-template-columns:1fr 1fr; gap:.9em; margin:.6em 0;}
-.card{border:var(--bw) solid var(--ink); border-radius:10px; background:var(--cream-lt); padding:.8em .95em;}
-.card h4{margin:0 0 .35em; font-size:1.15em;}
-.card p,.card li{font-size:.95em; margin:.3em 0;}
-.steps{list-style:none; padding:0; margin:.6em 0; counter-reset:st;}
-.steps li{
-  counter-increment:st; position:relative; padding-left:2.1em; margin:.65em 0; font-size:1.05em;
-}
-.steps li::before{
-  content:counter(st); position:absolute; left:0; top:.05em;
-  width:1.5em; height:1.5em; border-radius:50%;
-  background:var(--red); color:#fff; font-size:.8em;
-  display:flex; align-items:center; justify-content:center;
-}
-.land{
-  margin-top:auto; border-top:var(--bw) solid var(--ink);
-  padding-top:.6em; font-size:1.1em; color:var(--red);
-}
-.land::before{content:"→ "; }
+.quote.sm{font-size:24px;line-height:1.75}
+.big-note{font-size:38px;font-weight:800;letter-spacing:.05em;line-height:1.5}
+.big-note.sm{font-size:31px}
+.note{border:4px dashed var(--ink);border-radius:8px;padding:14px 22px;font-size:20px;line-height:1.6;background:#fff}
 
-/* ---- 表紙 ---- */
-.cover{background:var(--ink); border-color:var(--ink); color:var(--cream); justify-content:center;}
-.cover h1{color:var(--cream); font-size:2.9em;}
-.cover .kicker{color:var(--gold);}
-.cover .sub{color:#D8C9BB;}
-.cover .rule{width:5em; height:5px; background:var(--red); border-radius:3px; margin:.9em 0 1.1em;}
+/* ---------- 番号ステップ ---------- */
+.steps{display:flex;flex-direction:column;gap:22px}
+.st{display:flex;gap:18px;align-items:flex-start}
+.st .num{flex:none;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--cream);
+  font-size:23px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.st .w{font-size:27px;line-height:1.5;font-weight:800;padding-top:5px}
+.st .sub{font-size:20px;line-height:1.65;color:#5C4E44;font-weight:600;margin-top:6px}
 
-/* ---- UI ---- */
-#bar{
-  position:fixed; left:0; right:0; bottom:0; height:56px;
-  display:flex; align-items:center; justify-content:center; gap:1rem;
-  font-size:.82rem; color:var(--ink-2); letter-spacing:.08em;
+/* ===== 印刷・PDF書き出し ===== */
+@media print{
+  @page{ size: 1280px 720px; margin: 0; }
+  html,body{ background:#fff; height:auto; display:block; overflow:visible; }
+  #stage{ transform:none !important; width:1280px; height:auto; position:static; }
+  .slide{
+    display:flex !important; position:relative; inset:auto;
+    width:1280px; height:720px;
+    break-after:page; page-break-after:always;
+  }
+  .slide:last-child{ break-after:auto; page-break-after:auto; }
+  #bar,#help{ display:none !important; }
+  *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
 }
-#bar button{
-  font:inherit; font-weight:800; cursor:pointer;
-  border:2px solid var(--ink); border-radius:6px; background:var(--white);
-  color:var(--ink); padding:.3rem .8rem;
-}
-#bar button:hover{background:var(--hl);}
-#count{min-width:5.5em; text-align:center; font-variant-numeric:tabular-nums;}
-#prog{position:fixed; top:0; left:0; height:4px; background:var(--red); width:0; transition:width .15s;}
-@media (max-width:640px){
-  h1{font-size:2em;} h2{font-size:1.5em;}
-  .cols{grid-template-columns:1fr;}
-}
+
+/* progress */
+#bar{position:absolute;left:0;bottom:0;height:6px;background:var(--red);transition:width .18s}
+#help{position:fixed;right:14px;bottom:12px;color:#6b5c50;font-size:12px;letter-spacing:.05em}
 </style>
 </head>
 <body>
-<div id="prog"></div>
 <div id="stage">
 
-<!-- 1 表紙 -->
-<section class="slide cover">
-  <p class="kicker">お金のうつわを育てる習慣コミュニティ ／ 第二回講義</p>
-  <h1>喜びを増やす取り組み</h1>
-  <div class="rule"></div>
-  <p class="sub">支出において、喜びや感謝の割合を増やすポイント<br>9月のテーマ ── 〈受容〉のうつわ</p>
+<!-- 1 タイトル -->
+<section class="slide center" data-sec="オープニング">
+  <div class="hero" style="width:1000px"><img src="assets/title.png" alt="お金のうつわを育てる習慣コミュニティ"></div>
+  <div style="margin-top:30px;font-size:26px;letter-spacing:.16em;color:var(--muted);font-weight:700">2026.9.1 第二回講義</div>
 </section>
 
-<!-- 2 今日の流れ -->
-<section class="slide">
-  <p class="kicker">はじめに</p>
-  <h2>今日は3つ、お話しします</h2>
-  <ol class="steps">
-    <li><b>先月やってきたことの意味</b></li>
-    <li><b>9月に何を足すか</b></li>
-    <li><b>なぜこれをやるのか</b> ── 自分の喜びを増やすことが、この先の何に繋がっているのか</li>
-  </ol>
-  <p class="sub" style="margin-top:.8em">まず、先月の話からいきます。</p>
-</section>
-
-<!-- 3 ブロック1 -->
-<section class="slide">
-  <p class="kicker">1 ／ 8月にやってきたこと</p>
-  <h2>8月は〈貯蓄〉のうつわでした</h2>
-  <ul>
-    <li>収支を見る／普段の買い物で <span class="hl">数字を意識する・感情を意識する・その理由を意識する</span></li>
-  </ul>
-  <div class="big">
-    これは、<b>お金という価値と交換した「体験や物質の正体」を捉え続ける</b>取り組みでした。
+<!-- 2 8月のふりかえり -->
+<section class="slide" data-sec="8月のふりかえり">
+  <div class="eyebrow">LOOK BACK</div>
+  <h2>8月は〈貯蓄〉のうつわ</h2>
+  <div class="grow">
+    <ul class="big">
+      <li>収支を見る／普段の買い物で<br><span class="hl">数字を意識する・感情を意識する・その理由を意識する</span></li>
+    </ul>
+    <div class="block mt-l" style="padding:28px 32px">
+      <div class="big-note">お金という価値と交換した<br>
+        <span class="accent">「体験や物質の正体」</span>を捉え続ける取り組み</div>
+    </div>
   </div>
 </section>
 
-<!-- 4 ブロック1 フォロー -->
-<section class="slide">
-  <p class="kicker">1 ／ 8月にやってきたこと</p>
-  <h2>まだできていない方も、<br>まったく焦る必要はありません</h2>
-  <ul>
-    <li>このコミュニティに入っている時点で、<b>支払いのときにお金への意識が宿っています</b></li>
-    <li>それまでと比べて、お金にフォーカスする機会は確実に多かったはずです</li>
-  </ul>
-  <div class="big red">そこで発見や気づきがあれば、<span class="accent">それだけで大収穫</span>です。</div>
-  <p class="land">8月は「見る」をやった。やれた量は問わない</p>
-</section>
-
-<!-- 5 ブロック2 定義 -->
-<section class="slide">
-  <p class="kicker">2 ／ 見えないもの と 見えるもの</p>
-  <h2>先月みなさんが見ていたものは、<br>実は<span class="hl">2種類</span>ありました</h2>
-  <div class="cols">
+<!-- 3 見えない／見える 定義 -->
+<section class="slide" data-sec="見えないもの／見えるもの">
+  <div class="eyebrow">前提 ①</div>
+  <h2>先月見ていたものは、実は<span class="hl">2種類</span></h2>
+  <div class="cols mt-s">
     <div class="card">
-      <h4>見えるもの</h4>
+      <div class="h">見えるもの</div>
       <p>自分の<b>五感センサー</b>を通して感じられるもの。</p>
-      <p>人はこれを <b class="accent">「現実」</b> という呼び方で認識しています。</p>
+      <p class="mt-s">人はこれを <b class="accent">「現実」</b> という呼び方で認識している。</p>
     </div>
     <div class="card">
-      <h4>見えないもの</h4>
+      <div class="h">見えないもの</div>
       <p>自分の<b>意識・感情・直感</b>など。</p>
-      <p>五感センサーを通して<b>感じられないもの</b>すべて。</p>
+      <p class="mt-s">五感センサーを通して<b>感じられないもの</b>すべて。</p>
     </div>
   </div>
 </section>
 
-<!-- 6 二分類の定義（表） -->
-<section class="slide">
-  <p class="kicker">2 ／ 見えないもの と 見えるもの</p>
+<!-- 4 二分類の定義（表） -->
+<section class="slide" data-sec="見えないもの／見えるもの">
+  <div class="eyebrow">前提 ②</div>
   <h2>二分類の定義</h2>
-  <table>
-    <tr><th style="width:1%"></th><th>見えないもの（内側）</th><th>見えるもの（外側）</th></tr>
-    <tr><td class="lbl">何を指すか</td><td>意識・感情・直感など。五感で感じられないものすべて</td><td>五感で感じられるもの ＝ <b>現実</b></td></tr>
-    <tr><td class="lbl">他人と共有できるか</td><td><b class="accent">できない</b>。人によって捉えているものが違う</td><td>他の人とも同じものとして指し示せる</td></tr>
-    <tr><td class="lbl">レシートワークでは</td><td>喜びの度合い／感情／なぜそう感じたのか</td><td>支出額・買ったもの・レシートという事実</td></tr>
-    <tr><td class="lbl">変化の速さ</td><td><b>速い</b>。波のように変わる</td><td><b>遅い</b></td></tr>
-    <tr><td class="lbl">固定のされ方</td><td>固定化されない。戻る・意図しない方向にも変わる</td><td>一度固定化されると簡単には崩れない</td></tr>
-  </table>
-</section>
-
-<!-- 7 共有できない -->
-<section class="slide">
-  <p class="kicker">2 ／ 見えないもの と 見えるもの</p>
-  <div class="big red" style="font-size:1.55em">
-    見えないものは、<span class="hl">他の人と共有できない</span>。<br>
-    だから、<b>人によって捉えているものが違う</b>。
+  <div class="grow" style="justify-content:flex-start">
+    <table class="tight mt-s" style="font-size:20px">
+      <thead>
+        <tr><th style="width:230px"></th><th>見えないもの（内側）</th><th>見えるもの（外側）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="k">何を指すか</td><td>意識・感情・直感など。<br>五感で感じられないものすべて</td><td>五感で感じられるもの ＝ <b>現実</b></td></tr>
+        <tr><td class="k">他人と共有できるか</td><td><b class="accent">できない</b>。<br>人によって捉えているものが違う</td><td>他の人とも<br>同じものとして指し示せる</td></tr>
+        <tr><td class="k">レシートワークでは</td><td>喜びの度合い／感情／<br>なぜそう感じたのか</td><td>支出額・買ったもの・<br>レシートという事実</td></tr>
+        <tr><td class="k">変化の速さ</td><td><b>速い</b>。波のように変わる</td><td><b>遅い</b></td></tr>
+        <tr><td class="k">固定のされ方</td><td>固定化されない。<br>戻る・意図しない方向にも変わる</td><td>一度固定化されると<br>簡単には崩れない</td></tr>
+      </tbody>
+    </table>
   </div>
-  <ul>
-    <li>同じ場にいて、同じものを買っても、<b>そこで何を感じたかは一人ひとり違う</b></li>
-    <li>しかもそれは<b>見せ合えない</b>。だから、自分で見にいくしかない</li>
-    <li>レシートワークが「自分で書く」形になっているのは、そのためです</li>
-  </ul>
-  <p class="land">他人の答えは、自分の答えにならない</p>
 </section>
 
-<!-- 8 変化速度とカット -->
-<section class="slide">
-  <p class="kicker">2 ／ 見えないもの と 見えるもの</p>
-  <h2>意識はすぐ変わる。でも、固定化には反復がいる</h2>
-  <ul>
-    <li>意識・感覚・感情は、ちょっとした取り組みで<b>すぐ変化させられる</b></li>
-    <li>ただし固定化されないので、<b>元に戻る／意図しない方向へ変わるのも速い</b></li>
-  </ul>
-  <div class="quote">
-    美しくカットされたお手本や、そこに至る理論を知れば、<b>向かう方向のイメージ</b>はできます。
-    でも「わかった」だけでは、同じようには切れません。<br>
-    落とし込んで固定化するために、<b class="accent">何度も練習を重ねて</b>いまの技術になっているはずです。
-  </div>
-  <p>意識や感情の扱いも、ビジョンに向かうのも、まったく同じ。<b>反復した行動</b>が要ります。</p>
-  <p class="land">焦らずゆっくり、体に覚えさせていく</p>
-</section>
-
-<!-- 9 3つの結論 -->
-<section class="slide">
-  <p class="kicker">2 ／ 見えないもの と 見えるもの</p>
+<!-- 5 3つの結論 -->
+<section class="slide" data-sec="見えないもの／見えるもの">
+  <div class="eyebrow">前提 ③</div>
   <h2>ここから導かれる3つのこと</h2>
-  <ol class="steps">
-    <li><b>意識・感情はすぐ変えられる。だが固定化には反復がいる</b></li>
-    <li><b>見える領域の変化には時間がかかる。焦らなくていい</b></li>
-    <li><b>変化は必ず「見えない側 → 見える側」の順で起こる</b><br>
-      <span class="sub">見える結果には、必ず内側で何をどう受け取ったかが反映されている。<br>
-      カットも必ず「ボブならボブ」「ウルフならウルフ」と思って切っている。</span></li>
-  </ol>
-  <p class="land">現実は、いつも遅れて動く</p>
+  <div class="grow">
+    <div class="steps">
+      <div class="st"><div class="num">1</div><div>
+        <div class="w">意識・感情はすぐ変えられる。<br>ただし固定化には反復がいる</div>
+      </div></div>
+      <div class="st"><div class="num">2</div><div>
+        <div class="w">見える領域の変化には時間がかかる。焦らなくていい</div>
+      </div></div>
+      <div class="st"><div class="num">3</div><div>
+        <div class="w">変化は必ず<span class="hl">「見えない側 → 見える側」</span>の順で起こる</div>
+        <div class="sub">見える結果には、必ず内側で何をどう受け取ったかが反映されている</div>
+      </div></div>
+    </div>
+  </div>
 </section>
 
-<!-- 10 ブロック3 主題 -->
-<section class="slide">
-  <p class="kicker">3 ／ 9月にやること</p>
-  <h1 style="font-size:2.2em">9月は<br><span class="hl">「喜びを増やす取り組み」</span>の月です</h1>
-  <p class="sub" style="margin-top:.6em">その具体的な方法を、これからお渡しします。</p>
+<!-- 6 9月のテーマ -->
+<section class="slide center" data-sec="9月のワーク">
+  <div class="eyebrow">9月</div>
+  <h1>9月は受容の器のワーク<br><span class="hl">（喜びを増やす取り組み）</span><br>に取り組んでみよう</h1>
 </section>
 
-<!-- 11 答え合わせ・持続度 -->
-<section class="slide">
-  <p class="kicker">3 ／ 喜びを増やす取り組み</p>
+<!-- 7 答え合わせ・持続度 -->
+<section class="slide" data-sec="9月のワーク">
+  <div class="eyebrow">METHOD</div>
   <h2>方法 ── 先月の支出の「答え合わせ」</h2>
-  <ul>
-    <li>感情・意識・認識はすぐ変わる。だから時間が経ったことで、<b>満足度や喜びが変化している支出</b>があります</li>
-    <li>わかる範囲で大丈夫。先月の買い物のうち<b>思い出せるもの</b>をピックアップして、当時との変化を追ってみてください</li>
-  </ul>
-  <div class="big">追いかけるのは <span class="accent">「喜びの持続度」</span></div>
-  <div class="cols">
-    <div class="card"><h4>長続きしたもの</h4><p>どんな要素があると、喜びが長続きするのか</p></div>
-    <div class="card"><h4>消えたもの</h4><p>買った時はすごく喜んでいたのに、今は思い出せないくらい何も感じない</p></div>
+  <div class="grow" style="justify-content:flex-start">
+    <ul class="mid mt-s">
+      <li>感情・意識・認識はすぐ変わる。だから時間が経ったことで、<b>満足度や喜びが変化している支出</b>がある</li>
+      <li>わかる範囲でいい。先月の買い物のうち<b>思い出せるもの</b>をピックアップして、当時との変化を追ってみる</li>
+    </ul>
+    <div class="block mt" style="padding:18px 28px;border-color:var(--red)">
+      <div class="big-note sm">追いかけるのは <span class="accent">「喜びの持続度」</span></div>
+    </div>
+    <div class="cols mt-s" style="flex:none">
+      <div class="card" style="padding:18px 24px">
+        <div class="h" style="font-size:23px;margin-bottom:6px">長続きしたもの</div>
+        <p style="font-size:20px">どんな要素があると、喜びが長続きするのか</p>
+      </div>
+      <div class="card" style="padding:18px 24px">
+        <div class="h" style="font-size:23px;margin-bottom:6px">消えたもの</div>
+        <p style="font-size:20px">買った時はすごく喜んでいたのに、今は思い出せないくらい何も感じない</p>
+      </div>
+    </div>
+    <div class="small mt-s" style="font-weight:800">この両方を見る。</div>
   </div>
-  <p class="sub"><b>この両方を見ます。</b></p>
 </section>
 
-<!-- 12 喜びが少なかった支出 -->
-<section class="slide">
-  <p class="kicker">3 ／ 喜びを増やす取り組み</p>
+<!-- 8 喜びが少なかった支出 -->
+<section class="slide" data-sec="9月のワーク">
+  <div class="eyebrow">METHOD</div>
   <h2>喜びが少なかった支出こそ、掘る</h2>
-  <ul>
-    <li>多くの人が苦手ですが、<b>非常に大切なデータ</b>になります</li>
-    <li>「失敗だった」で終わらせると、次に活かせません</li>
-    <li>「苦手だった」「好きじゃなかった」で止めずに、<b>なぜ喜びが少なかったのか解像度を上げる</b></li>
-    <li>「苦手なものを間違えて買った」とレッテルを貼ると、吸収できるものが減ります</li>
-  </ul>
-  <div class="big red">
-    <b>「本当はどういうものが欲しかったのか」</b>を言語化する。
+  <div class="grow" style="justify-content:flex-start">
+    <ul class="mid mt-s">
+      <li>多くの人が苦手。だが<b>非常に大切なデータ</b>になる</li>
+      <li>「失敗だった」で終わらせると、次に活かせない</li>
+      <li>「苦手だった」「好きじゃなかった」で止めず、<b>なぜ喜びが少なかったのか解像度を上げる</b></li>
+      <li>「苦手なものを間違えて買った」とレッテルを貼ると、吸収できるものが減る</li>
+    </ul>
+    <div class="block mt" style="padding:24px 30px;border-color:var(--red)">
+      <div class="big-note sm"><b>「本当はどういうものが欲しかったのか」</b>を言語化する</div>
+    </div>
+    <div class="quote sm mt-s">これが、自分の欲や望みにフォーカスするということ</div>
   </div>
-  <p class="land">これが、自分の欲や望みにフォーカスするということ</p>
 </section>
 
-<!-- 13 使い倒す -->
-<section class="slide">
-  <p class="kicker">4 ／ 使い倒す</p>
+<!-- 9 使い倒す -->
+<section class="slide" data-sec="使い倒す">
+  <div class="eyebrow">STANCE</div>
   <h2>喜びの割合は、買った瞬間に確定しない</h2>
-  <ul>
-    <li>続いていくサービスなら、<b>何が良くなかったかを言語化して相手に伝える</b>ことがサービスの改善につながり、<b>後からでも自分の働きかけで喜びを引き上げられます</b></li>
-    <li>これができると、買い物を <b>「成功か失敗か」の二択で捉えなくなります</b></li>
-    <li>失敗と感じたものも、<b>工夫して使い倒す／良かったエッセンスを抽出する</b></li>
-    <li>支出に限らず、<b>自分が選んだ環境や仕事の満足度も、主体的に動けば上げられます</b></li>
-  </ul>
-  <div class="big red" style="font-size:1.4em">喜びの割合は、買った瞬間に確定しない。<br><span class="hl">後からでも上げられる。</span></div>
-</section>
-
-<!-- 14 全信全疑 -->
-<section class="slide">
-  <p class="kicker">4 ／ 使い倒すときのスタンス</p>
-  <h1 style="font-size:2.6em">全信全疑</h1>
-  <p class="sub" style="letter-spacing:.2em">ぜんしん ぜんぎ</p>
-  <div class="big red" style="font-size:1.5em; margin-top:.8em">
-    一旦、<b>全部信じる</b>。<br>そのうえで、<b>全部疑う</b>。
+  <div class="grow" style="justify-content:flex-start">
+    <ul class="mid mt-s">
+      <li><b>本当はどういうものが欲しかったのかを言語化することで、購入後でも自分次第で喜びを増やすことができる</b></li>
+      <li>これができると、買い物を <b>「成功か失敗か」の二択で捉えなくなる</b></li>
+      <li>失敗と感じたものも、<b>工夫して使い倒す／良かったエッセンスを抽出する</b></li>
+      <li>支出に限らず、<b>自分が選んだ環境や仕事の満足度も、主体的に動けば上げられる</b></li>
+    </ul>
+    <div class="block mt" style="padding:24px 30px;border-color:var(--red)">
+      <div class="big-note sm">喜びの割合は、買った瞬間に確定しない。<br><span class="hl">後からでも上げられる。</span></div>
+    </div>
   </div>
 </section>
 
-<!-- 15 全信 -->
-<section class="slide">
-  <p class="kicker">4 ／ 全信全疑</p>
+<!-- 10 全信全疑 -->
+<section class="slide center" data-sec="全信全疑">
+  <div class="eyebrow">STANCE ／ ぜんしん ぜんぎ</div>
+  <h1>全信全疑</h1>
+  <div class="block mt-l" style="padding:30px 56px;border-color:var(--red)">
+    <div class="big-note">一旦、<span class="accent">全部信じる</span>。<br>そのうえで、<span class="accent">全部疑う</span>。</div>
+  </div>
+</section>
+
+<!-- 11 全信 -->
+<section class="slide" data-sec="全信全疑">
+  <div class="eyebrow">全信</div>
   <h2>〈全信〉一旦、全部信じる</h2>
-  <table>
-    <tr><th>何を信じるか</th><th style="width:22%">どちらの信</th></tr>
-    <tr><td><b>それを選んで買うと決めた自分</b>を、一旦全部信じる</td><td><b class="accent">自信</b></td></tr>
-    <tr><td><b>その商品が良いものだ</b>と、一旦信じる</td><td><b class="accent">他信</b></td></tr>
-  </table>
-  <ul>
-    <li>「失敗だったかも」と疑うところから入ると、<b>そこで受け取れる量が決まってしまいます</b></li>
-    <li>まず<b>判断した自分</b>と<b>選んだ対象</b>の両方を信じる、という順番</li>
-  </ul>
+  <div class="grow" style="justify-content:flex-start">
+    <table class="mt-s">
+      <thead><tr><th>何を信じるか</th><th style="width:220px">どちらの信</th></tr></thead>
+      <tbody>
+        <tr><td><b>それを選んで買うと決めた自分</b>を、一旦全部信じる</td><td style="text-align:center"><b class="accent" style="font-size:27px">自信</b></td></tr>
+        <tr><td><b>その商品が良いものだ</b>と、一旦信じる</td><td style="text-align:center"><b class="accent" style="font-size:27px">他信</b></td></tr>
+      </tbody>
+    </table>
+    <ul class="mid mt">
+      <li>「失敗だったかも」と疑うところから入ると、<b>そこで受け取れる量が決まってしまう</b></li>
+      <li>まず<b>判断した自分</b>と<b>選んだ対象</b>の両方を信じる、という順番</li>
+    </ul>
+  </div>
 </section>
 
-<!-- 16 なぜ先に信じるのか -->
-<section class="slide">
-  <p class="kicker">4 ／ 全信全疑</p>
+<!-- 12 なぜ先に信じるのか -->
+<section class="slide" data-sec="全信全疑">
+  <div class="eyebrow">全信</div>
   <h2>なぜ、先に信じるのか</h2>
-  <div class="big red" style="font-size:1.35em">
-    うまくいく方法は<b>無数にある</b>。<br>
-    だからこそ、<span class="hl">自分が選んだものを一旦全部信じてみる</span>ことが必要になる。
-  </div>
-  <ul>
-    <li>正解は1つではありません。<b>どのやり方でも、やり切れば結果は出ます</b></li>
-    <li>逆に言えば、どれを選んでも<b>「他にもっといい方法があるのでは」と思える</b>状態が常にあります</li>
-    <li>だから、選んだあとに疑いながら使うと、<b>受け取り切る前に次へ移る</b>ことになります</li>
-  </ul>
-  <div class="quote">
-    全信は「これが唯一の正解だ」と思い込むことではありません。<br>
-    無数にある選択肢の中から<b>自分が選んだ</b>という事実のほうを信じる、ということ。<br>
-    だから全信は、他人に預ける態度ではなく、<b class="accent">自分の選択を引き受ける態度</b>です。
+  <div class="grow" style="justify-content:flex-start">
+    <div class="block mt-s" style="padding:24px 30px;border-color:var(--red)">
+      <div class="big-note sm">うまくいく方法は<b>無数にある</b>。<br>
+        だからこそ、<span class="hl">自分が選んだものを一旦全部信じてみる</span>ことが必要になる。</div>
+    </div>
+    <ul class="mid mt">
+      <li>正解は1つではない。<b>どのやり方でも、やり切れば結果は出る</b></li>
+      <li>逆に言えば、どれを選んでも<b>「他にもっといい方法があるのでは」と思える</b>状態が常にある</li>
+      <li>選んだあとに疑いながら使うと、<b>受け取り切る前に次へ移る</b>ことになる</li>
+    </ul>
+    <div class="note mt-s">全信は「これが唯一の正解だ」と思い込むことではない。無数にある選択肢の中から<b>自分が選んだ</b>という事実のほうを信じる、ということ。だから全信は、他人に預ける態度ではなく、<b class="accent">自分の選択を引き受ける態度</b>。</div>
   </div>
 </section>
 
-<!-- 17 全疑 -->
-<section class="slide">
-  <p class="kicker">4 ／ 全信全疑</p>
-  <h2>〈全疑〉そのうえで、徹底的に検証する ＝ 答え合わせ</h2>
-  <ul>
-    <li><b>誰よりも使い倒す</b></li>
-    <li><b>誰よりもその良さを研究する</b>／マニアックに見ていく・見つける</li>
-    <li><b>欠点や、自分に合わなかった点も含めて</b>検証する</li>
-  </ul>
-  <p>粗探しから入るのではなく、<b>信じて使い倒したうえで「実際どうだったか」を見る</b>。<br>
-  つまり〈全疑〉は、<b class="accent">振り返り＝答え合わせ</b>そのものです。</p>
-  <div class="big red" style="font-size:1.45em">
-    <span class="hl">信じないと、答え合わせができない。</span>
-  </div>
-  <p class="sub">疑いながら使ったものは「やっぱりダメだった」しか出てきません。<br>
-  全部信じて使い倒したからこそ、良かった点も合わなかった点も、<b>精度の高いデータとして残ります</b>。</p>
-</section>
-
-<!-- 18 わがまま -->
-<section class="slide">
-  <p class="kicker">5 ／ ここまでの話をしていると</p>
-  <h2>「わがままなんじゃないか」</h2>
-  <ul>
-    <li>この方向に進むことは、<b>自分の欲やエゴを叶えていくこと</b>にもなります</li>
-    <li>だから「わがままなんじゃないか」「悪い人間になっているんじゃないか」と心配になる人が多い</li>
-    <li>「こういうことをしたら<b>嫌われちゃうんじゃないか／省かれちゃうんじゃないか</b>」</li>
-  </ul>
-  <div class="big">
-    ほとんどの場合、<b>「こんな風に思っているのは自分だけなんじゃないか」</b><br>という思いが湧いてきます。だから不安になる。
+<!-- 13 全疑 -->
+<section class="slide" data-sec="全信全疑">
+  <div class="eyebrow">全疑</div>
+  <h2>〈全疑〉そのうえで、徹底的に検証する<br>＝ 答え合わせ</h2>
+  <div class="grow" style="justify-content:flex-start">
+    <ul class="mid mt-s">
+      <li><b>誰よりも使い倒す</b></li>
+      <li><b>誰よりもその良さを研究する</b>／マニアックに見ていく・見つける</li>
+      <li><b>欠点や、自分に合わなかった点も含めて</b>検証する</li>
+    </ul>
+    <div class="block mt" style="padding:24px 30px;border-color:var(--red)">
+      <div class="big-note"><span class="hl">信じないと、答え合わせができない。</span></div>
+    </div>
+    <div class="small mt-s">疑いながら使ったものは「やっぱりダメだった」しか出てこない。<br>
+      全部信じて使い倒したからこそ、良かった点も合わなかった点も、<b>精度の高いデータとして残る</b>。</div>
   </div>
 </section>
 
-<!-- 19 実は逆 -->
-<section class="slide">
-  <p class="kicker">5 ／ わがままなんじゃないか</p>
-  <h2>でも、本当は逆です</h2>
-  <div class="big red" style="font-size:1.3em">
-    その欲を叶えている姿を見ることによって、<br><b>周りの人たちは、自分の欲に気づくことができる。</b>
+<!-- 14 ピンとこない場合 -->
+<section class="slide" data-sec="欲と専門性">
+  <div class="eyebrow">よくある引っかかり</div>
+  <h2 style="font-size:38px">自分の欲や望みを叶えるということに対して<br>ピンとこない、あるいは抵抗感がある場合</h2>
+  <div class="grow" style="justify-content:flex-start">
+    <ul class="mid mt-s">
+      <li>この方向に進むことは、<b>自分の欲やエゴを叶えていくこと</b>にもなる</li>
+      <li>だから「わがままなんじゃないか」「悪い人間になっているんじゃないか」と心配になる人が多い</li>
+      <li>「こういうことをしたら<b>嫌われちゃうんじゃないか／省かれちゃうんじゃないか</b>」</li>
+    </ul>
+    <div class="block mt" style="padding:24px 30px">
+      <div class="big-note sm">ほとんどの場合、<br><b>「こんな風に思っているのは自分だけなんじゃないか」</b><br>という思いが湧いてくる。だから不安になる。</div>
+    </div>
   </div>
-  <p><b>欲に忠実に生きている人は、すごく周りの人の役に立っています。</b>（本人は無意識ですが）</p>
-  <div class="cols">
-    <div class="card"><h4>1｜ストレートに気づく</h4><p>「私もそれ、やっていいのかな」</p></div>
-    <div class="card"><h4>2｜拒否反応として出る</h4><p>「あの人のわがままな感じがすごく嫌」<br>「めっちゃ気になる」</p></div>
-  </div>
-  <p><b>どちらにせよ、関心は持っています。</b>人間は、何とも思っていないことには反応しないようにできています。<br>
-  何らかのセンサーが働いて、<b class="accent">「そっか、私これやりたかったんだ」</b>と気づくきっかけになります。</p>
 </section>
 
-<!-- 20 専門性 -->
-<section class="slide">
-  <p class="kicker">5 ／ その先に何があるか</p>
+<!-- 15 実は逆 -->
+<section class="slide" data-sec="欲と専門性">
+  <div class="eyebrow">よくある引っかかり</div>
+  <h2>でも、本当は逆</h2>
+  <div class="grow" style="justify-content:flex-start">
+    <div class="block mt-s" style="padding:24px 30px;border-color:var(--red)">
+      <div class="big-note sm">その欲を叶えている姿を見ることによって、<br><b>周りの人たちは、自分の欲に気づくことができる。</b></div>
+    </div>
+    <div class="quote sm mt-s">欲に忠実に生きている人は、すごく周りの人の役に立っている</div>
+    <div class="cols mt-s" style="flex:none">
+      <div class="card" style="padding:18px 24px">
+        <div class="h" style="font-size:22px;margin-bottom:6px">1｜ストレートに気づく</div>
+        <p style="font-size:20px">「私もそれ、やっていいのかな」</p>
+      </div>
+      <div class="card" style="padding:18px 24px">
+        <div class="h" style="font-size:22px;margin-bottom:6px">2｜拒否反応として出る</div>
+        <p style="font-size:20px">「あの人のわがままな感じがすごく嫌」<br>「めっちゃ気になる」</p>
+      </div>
+    </div>
+    <div class="small mt-s"><b>どちらにせよ、関心は持っている。</b>人間は、何とも思っていないことには反応しないようにできている。<br>
+      何らかのセンサーが働いて、<b class="accent">「そっか、私これやりたかったんだ」</b>と気づくきっかけになる。</div>
+  </div>
+</section>
+
+<!-- 16 専門性 -->
+<section class="slide" data-sec="欲と専門性">
+  <div class="eyebrow">その先に何があるか</div>
   <h2>専門性が高まっていく</h2>
-  <ol class="steps">
-    <li>自分の欲を叶えられる人は、<b>次から次へと、自分の感覚を自分の力で叶える力</b>が高まる</li>
-    <li>そうすると、<b>同じように周りの人の望みを叶える力</b>も育つ</li>
-    <li>さらにその先で <b class="accent">「専門性が高まる」</b> ということが起きる</li>
-  </ol>
-  <p>〈流入〉のうつわを拡大するときには「対価以上に働く」「スキルシェア」というワークがあります。
-  <b>この専門性が高まっていると、スキルシェアをしたときに入ってくるお金の量が結構変わってきます。</b></p>
-  <div class="quote">
-    「世の中で役に立つ」「求められている」という理由だけでノウハウを追い求めた人より、<br>
-    <b>自分の心が動くこと・欲に従って叶えていくことで磨かれた専門性</b>のほうが、<b class="accent">長期でうまくいきやすい</b>。
+  <div class="grow">
+    <div class="steps">
+      <div class="st"><div class="num">1</div><div>
+        <div class="w">自分の欲を叶えられる人は、次から次へと<br><span class="hl">自分の感覚を自分の力で叶える力</span>が高まる</div>
+      </div></div>
+      <div class="st"><div class="num">2</div><div>
+        <div class="w">そうすると、<b>同じように周りの人の望みを叶える力</b>も育つ</div>
+      </div></div>
+      <div class="st"><div class="num">3</div><div>
+        <div class="w">さらにその先で <span class="accent">「専門性が高まる」</span> ということが起きる</div>
+      </div></div>
+    </div>
   </div>
-  <p class="land">自分を喜ばせるのは、わがままではない。専門性を研ぎ澄ます工程である</p>
 </section>
 
-<!-- 21 締め -->
-<section class="slide">
-  <p class="kicker">6 ／ 9月にできること</p>
+<!-- 17 流入で効いてくる -->
+<section class="slide" data-sec="欲と専門性">
+  <div class="eyebrow">その先に何があるか</div>
+  <h2>そして〈流入〉のうつわで効いてくる</h2>
+  <div class="grow" style="justify-content:flex-start">
+    <ul class="mid mt-s">
+      <li>〈流入〉のうつわを拡大するときには、<b>「対価以上に働く」「スキルシェア」</b>というワークがある</li>
+      <li><b>この専門性が高まっていると、スキルシェアをしたときに入ってくるお金の量が結構変わってくる</b></li>
+    </ul>
+    <div class="quote sm mt">「世の中で役に立つ」「求められている」という理由だけで<br>ノウハウを追い求めた人より、<br>
+      <b>自分の心が動くこと・欲に従って叶えていくことで磨かれた専門性</b>のほうが、<br>
+      <span class="accent">長期でうまくいきやすい</span></div>
+    <div class="block mt-s" style="padding:20px 30px;border-color:var(--red)">
+      <div class="big-note sm">自分を喜ばせるのは、わがままではない。<br><span class="hl">専門性を研ぎ澄ます工程である。</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 18 9月にできること -->
+<section class="slide" data-sec="9月にできること">
+  <div class="eyebrow">CLOSING</div>
   <h2>喜びを増やすためにできること</h2>
-  <div class="big" style="font-size:1.15em">
-    基本は、<b>8月から続けているワーク（レシート①〜④・収支）をそのまま。</b><br>
-    <b class="accent">それだけで十分に効果があります。</b>
+  <div class="grow" style="justify-content:flex-start">
+    <div class="block mt-s" style="padding:22px 30px">
+      <div class="big-note sm">基本は、8月から続けているワーク<br>（レシート①〜④・収支）をそのまま。<br>
+        <span class="accent">それだけで十分に効果がある。</span></div>
+    </div>
+    <h3 class="mt" style="font-size:26px;color:var(--muted);letter-spacing:.1em">余裕があったら／思いついたら</h3>
+    <ul class="mid mt-s">
+      <li>レシートの<b>手順5・6</b>をやってみる<br>
+        <span class="small">次はどうすれば喜びが増えるか／使う前・使う最中・使った後で喜びの割合がどう変わったか</span></li>
+      <li>さらに、<b>買った当時と今</b>でどう変わったかまで見てみる　<span class="accent" style="font-weight:800">← 今日の話</span></li>
+      <li>喜びが少なかったものは<b>「本当はどういうものが欲しかったのか」</b>を言葉にしてみる</li>
+      <li>まだ手元にあるものは、<b>使い倒す工夫</b>を1つ試してみる</li>
+    </ul>
   </div>
-  <h3>余裕があったら／思いついたら</h3>
-  <ul>
-    <li>レシートの<b>手順5・6</b>をやってみる<br>
-      <span class="sub">次はどうすれば喜びが増えるか／使う前・使う最中・使った後で喜びの割合がどう変わったか</span></li>
-    <li>さらに、<b>買った当時と今</b>でどう変わったかまで見てみる　<span class="sub accent">← 今日の話</span></li>
-    <li>喜びが少なかったものは<b>「本当はどういうものが欲しかったのか」</b>を言葉にしてみる</li>
-    <li>まだ手元にあるものは、<b>使い倒す工夫</b>を1つ試してみる</li>
-  </ul>
 </section>
 
 </div>
 
-<div id="bar">
-  <button id="prev" type="button" aria-label="前へ">◀ 前</button>
-  <span id="count">1 / 21</span>
-  <button id="next" type="button" aria-label="次へ">次 ▶</button>
-  <button id="fs" type="button">全画面</button>
-</div>
+<div id="bar"></div>
+<div id="help">← → で移動　/　F11 全画面</div>
 
 <script>
-(function(){
-  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
-  var i = 0;
-  var count = document.getElementById('count');
-  var prog = document.getElementById('prog');
-  function show(n){
-    i = Math.max(0, Math.min(slides.length - 1, n));
-    slides.forEach(function(s, k){ s.classList.toggle('on', k === i); });
-    count.textContent = (i + 1) + ' / ' + slides.length;
-    prog.style.width = ((i + 1) / slides.length * 100) + '%';
-    try { location.hash = 'p' + (i + 1); } catch (e) {}
-  }
-  document.getElementById('prev').onclick = function(){ show(i - 1); };
-  document.getElementById('next').onclick = function(){ show(i + 1); };
-  document.getElementById('fs').onclick = function(){
-    if (document.fullscreenElement) { document.exitFullscreen(); }
-    else if (document.documentElement.requestFullscreen) { document.documentElement.requestFullscreen(); }
-  };
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); show(i + 1); }
-    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); show(i - 1); }
-    else if (e.key === 'Home') { show(0); }
-    else if (e.key === 'End') { show(slides.length - 1); }
-  });
-  document.getElementById('stage').addEventListener('click', function(e){
-    var r = this.getBoundingClientRect();
-    show(i + ((e.clientX - r.left) < r.width * 0.25 ? -1 : 1));
-  });
-  var m = (location.hash || '').match(/^#p(\d+)$/);
-  show(m ? (parseInt(m[1], 10) - 1) : 0);
-})();
+if(location.search.includes('share')) document.body.classList.add('share');
+const slides=[...document.querySelectorAll('.slide')];
+const stage=document.getElementById('stage');
+const bar=document.getElementById('bar');
+let i=0;
+
+slides.forEach((s,n)=>{
+  const f=document.createElement('div');
+  f.className='foot';
+  f.innerHTML=`<span>${s.dataset.sec||''}</span><span class="t">${n+1} / ${slides.length}</span>`;
+  s.appendChild(f);
+});
+
+function show(n){
+  i=Math.max(0,Math.min(slides.length-1,n));
+  slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+  bar.style.width=((i+1)/slides.length*100)+'%';
+  location.hash=i+1;
+}
+function fit(){
+  const s=Math.min(innerWidth/1280, innerHeight/720);
+  stage.style.transform='scale('+s+')';
+}
+addEventListener('resize',fit);
+addEventListener('keydown',e=>{
+  if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();show(i+1);}
+  if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(i-1);}
+  if(e.key==='Home')show(0);
+  if(e.key==='End')show(slides.length-1);
+});
+addEventListener('click',e=>{ show(e.clientX < innerWidth*0.25 ? i-1 : i+1); });
+fit();
+show(parseInt(location.hash.slice(1))-1 || 0);
 </script>
 </body>
 </html>
