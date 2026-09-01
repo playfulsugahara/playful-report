@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>喜びを増やす取り組み｜9/1 第二回講義レポート</title>
+<meta name="description" content="見えるもの／見えないもの・喜びの持続度・全信全疑・「わがままなんじゃないか」への答え">
+<meta property="og:type" content="article">
+<meta property="og:title" content="喜びを増やす取り組み｜9/1 第二回講義レポート">
+<meta property="og:description" content="見えるもの／見えないもの・喜びの持続度・全信全疑・「わがままなんじゃないか」への答え">
+<meta name="theme-color" content="#F3E8DD">
+<style>*{box-sizing:border-box}body{margin:0}</style>
+<style>
+/* =========================================================
+   トンマナ：8/2 キックオフ講義スライドに準拠
+   クリーム地／極太の墨線／太ゴシック／朱の差し色／マーカー
+   意図的に単一テーマ（クリーム）で通す
+   ========================================================= */
+:root,
+:root[data-theme="light"],
+:root[data-theme="dark"]{
+  --cream:#F3E8DD;
+  --cream-lt:#FAF3EC;
+  --white:#FFFFFF;
+  --ink:#211815;
+  --ink-2:#5C4E44;
+  --muted:#8A7A6D;
+  --red:#E74A25;
+  --blue:#1E44A0;
+  --green:#33A055;
+  --orange:#E1813A;
+  --gold:#DCA839;
+  --hl:#F7D9A8;
+  --sans:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic","YuGothic",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  --bw:3px;
+  --measure:40rem;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;} *{transition:none!important;animation:none!important;}}
+
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.9;
+  letter-spacing:.02em;
+  -webkit-font-smoothing:antialiased;
+  word-break:auto-phrase;
+  line-break:strict;
+  font-feature-settings:"palt" 1;
+}
+h1,h2,h3,h4,.eyebrow,.chip,.lead,.big-note,.v .nm,.pyr .nm{text-wrap:balance;}
+p,li,td,th,dd,.sm{text-wrap:pretty;}
+
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 1.1rem;}
+
+/* ---------- utility ---------- */
+.hl{background:linear-gradient(transparent 58%, var(--hl) 58%);padding:0 2px;}
+.accent{color:var(--red);}
+b,strong{font-weight:800;}
+a{color:var(--ink);text-decoration-color:var(--red);text-underline-offset:.2em;}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:2px;}
+
+/* ---------- sticky bar ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:var(--cream);
+  border-bottom:var(--bw) solid var(--ink);
+}
+.topbar .wrap{display:flex;align-items:center;gap:.7rem;height:3.1rem;}
+.topbar .mk{
+  flex:1;font-weight:800;font-size:.92rem;letter-spacing:.06em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.topbar .to{
+  font-weight:800;font-size:.72rem;letter-spacing:.1em;
+  border:2px solid var(--ink);border-radius:5px;background:var(--white);
+  padding:.26rem .7rem;text-decoration:none;color:var(--ink);white-space:nowrap;
+}
+
+/* ---------- masthead ---------- */
+.masthead{padding:2.5rem 0 2rem;}
+.eyebrow{
+  font-size:.78rem;letter-spacing:.18em;color:var(--muted);
+  font-weight:800;margin-bottom:.8rem;
+}
+h1.title{
+  font-size:clamp(2rem,8.4vw,2.6rem);
+  line-height:1.28;letter-spacing:.05em;font-weight:800;
+  margin:0 0 1.1rem;
+}
+.subtitle{font-size:1rem;line-height:1.8;font-weight:500;margin:0;}
+.meta{
+  font-size:.76rem;color:var(--muted);letter-spacing:.06em;font-weight:800;
+  font-variant-numeric:tabular-nums;margin-top:1.1rem;
+}
+
+.archive{
+  display:flex;align-items:center;gap:.8rem;
+  margin-top:1.4rem;padding:.85rem 1rem;
+  border:var(--bw) solid var(--ink);border-radius:8px;background:var(--white);
+  text-decoration:none;color:var(--ink);
+}
+.archive .ico{
+  width:2.1rem;height:2.1rem;flex:none;border-radius:50%;
+  background:var(--red);color:var(--white);
+  display:grid;place-items:center;font-size:.8rem;
+}
+.archive .tx{flex:1;line-height:1.5;}
+.archive .tx b{display:block;font-size:.95rem;letter-spacing:.04em;}
+.archive .tx span{font-size:.72rem;color:var(--muted);font-weight:800;letter-spacing:.06em;}
+.archive .ar{font-weight:800;font-size:1.1rem;}
+
+/* ---------- note (dashed) ---------- */
+.note{
+  border:3px dashed var(--ink);border-radius:8px;background:var(--white);
+  padding:1.1rem 1.15rem;margin:1.6rem 0 0;
+}
+.note h2{font-size:1rem;font-weight:800;letter-spacing:.06em;margin:0 0 .6rem;}
+.note p{margin:0 0 .8rem;font-size:.9rem;line-height:1.8;}
+.note ul{margin:0;padding-left:1.1rem;font-size:.875rem;line-height:1.8;}
+.note li{margin-bottom:.35rem;}
+
+/* ---------- timestamp chip ---------- */
+.ts{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-size:.7rem;font-weight:800;letter-spacing:.06em;
+  font-variant-numeric:tabular-nums;
+  border:2px solid var(--ink);border-radius:5px;background:var(--white);
+  padding:.1rem .45rem;white-space:nowrap;vertical-align:.06em;
+  color:var(--ink);
+}
+.ts::before{content:"▶";font-size:.56em;color:var(--red);}
+.ts-line{margin:0 0 1rem;display:flex;flex-wrap:wrap;gap:.35rem;}
+
+/* ---------- TOC ---------- */
+.toc{margin:2.6rem 0 1rem;border:var(--bw) solid var(--ink);border-radius:8px;overflow:hidden;background:var(--white);}
+.toc h2{
+  background:var(--ink);color:var(--cream);margin:0;
+  font-size:.8rem;font-weight:800;letter-spacing:.16em;
+  padding:.7rem 1rem;
+}
+.toc ol{list-style:none;margin:0;padding:0;}
+.toc li + li{border-top:2px solid var(--ink);}
+.toc a{display:flex;align-items:baseline;gap:.65rem;padding:.7rem .9rem;text-decoration:none;color:var(--ink);}
+.toc li:nth-child(odd) a{background:var(--cream-lt);}
+.toc a:hover{background:var(--hl);}
+.toc .n{font-weight:800;font-size:.74rem;color:var(--red);flex:none;width:1.3rem;font-variant-numeric:tabular-nums;}
+.toc .l{flex:1;font-size:.9rem;line-height:1.55;font-weight:700;}
+.toc .t{font-size:.68rem;color:var(--muted);font-weight:800;flex:none;font-variant-numeric:tabular-nums;}
+
+/* ---------- sections ---------- */
+section{padding:2.8rem 0 .5rem;}
+section + section{border-top:var(--bw) solid var(--ink);}
+h2.sec{
+  font-size:clamp(1.45rem,6vw,1.8rem);
+  line-height:1.35;letter-spacing:.05em;font-weight:800;
+  margin:0 0 1.4rem;
+}
+h3{
+  font-size:1.1rem;font-weight:800;letter-spacing:.04em;line-height:1.5;
+  margin:2.4rem 0 .9rem;
+  border-left:8px solid var(--ink);padding-left:.65rem;
+}
+h4{
+  font-size:.9rem;font-weight:800;letter-spacing:.06em;color:var(--red);
+  margin:1.6rem 0 .55rem;
+}
+p{margin:0 0 1.1rem;}
+ul,ol{padding-left:1.2rem;margin:0 0 1.2rem;}
+li{margin-bottom:.45rem;}
+li::marker{color:var(--red);font-weight:800;}
+.sm{font-size:.84rem;color:var(--ink-2);line-height:1.75;}
+
+/* ---------- quote ---------- */
+blockquote{
+  margin:0 0 1.2rem;padding:.1rem 0 .1rem 1rem;
+  border-left:7px solid var(--red);
+  font-weight:500;
+}
+blockquote p{margin:0 0 .65rem;}
+blockquote p:last-child{margin-bottom:0;}
+blockquote.big{
+  border:var(--bw) solid var(--ink);border-left:9px solid var(--red);
+  border-radius:0 8px 8px 0;background:var(--white);
+  padding:1rem 1.1rem;
+}
+blockquote .lead{
+  font-size:1.08rem;font-weight:800;line-height:1.65;letter-spacing:.04em;
+}
+
+/* ---------- Q&A ---------- */
+.qa{
+  border:var(--bw) solid var(--ink);border-radius:8px;background:var(--white);
+  padding:1rem 1.05rem;margin:0 0 1.2rem;
+}
+.qa .q{display:flex;gap:.6rem;margin:0 0 .85rem;font-weight:800;line-height:1.7;letter-spacing:.03em;}
+.qa .q::before{
+  content:"Q";flex:none;width:1.5rem;height:1.5rem;border-radius:50%;
+  background:var(--ink);color:var(--cream);font-size:.78rem;font-weight:800;
+  display:grid;place-items:center;margin-top:.25rem;
+}
+.qa > *:last-child{margin-bottom:0;}
+
+/* ---------- vessels（キックオフのイラスト流用） ---------- */
+.vessels{display:flex;flex-direction:column;gap:.85rem;margin:0 0 1.4rem;}
+.v{
+  border:var(--bw) solid var(--ink);border-radius:8px;overflow:hidden;
+  background:var(--white);display:flex;align-items:stretch;
+}
+.v .pic{
+  flex:none;width:106px;padding:.7rem;display:grid;place-items:center;
+  background:var(--cream-lt);border-right:var(--bw) solid var(--ink);
+}
+.v .pic img{max-width:100%;max-height:104px;object-fit:contain;
+  filter:drop-shadow(0 4px 7px rgba(0,0,0,.18));}
+.v .cap{padding:.75rem .9rem;flex:1;display:flex;flex-direction:column;justify-content:center;}
+.v .no{font-size:.72rem;font-weight:800;letter-spacing:.12em;color:var(--muted);}
+.v .nm{font-size:1.12rem;font-weight:800;letter-spacing:.06em;margin-top:.05rem;}
+.v .ds{font-size:.83rem;line-height:1.6;margin-top:.3rem;}
+.v .hw{
+  font-size:.72rem;font-weight:800;color:var(--ink-2);letter-spacing:.03em;
+  margin-top:.4rem;padding-top:.4rem;border-top:2px dashed var(--muted);
+}
+
+/* ---------- pyramid ---------- */
+.pyr{display:flex;flex-direction:column;align-items:center;gap:.35rem;margin:0 0 .8rem;}
+.pyr .lvl{
+  width:100%;border:var(--bw) solid var(--ink);border-radius:7px;
+  padding:.55rem .8rem;display:flex;align-items:baseline;gap:.55rem;
+  background:var(--white);
+}
+.pyr .ix{font-size:.75rem;font-weight:800;color:var(--red);flex:none;}
+.pyr .nm{font-size:1rem;font-weight:800;letter-spacing:.06em;flex:none;}
+.pyr .ds{font-size:.76rem;color:var(--ink-2);flex:1;line-height:1.5;}
+.pyr .l5{width:64%;}
+.pyr .l4{width:73%;}
+.pyr .l3{width:82%;}
+.pyr .l2{width:91%;}
+.pyr .l1{width:100%;}
+.pyr-cap{font-size:.76rem;color:var(--muted);text-align:center;font-weight:800;letter-spacing:.06em;margin:0 0 1.5rem;}
+@media (max-width:430px){
+  .pyr .lvl{flex-direction:column;gap:.1rem;align-items:flex-start;}
+  .pyr .l5{width:76%;}.pyr .l4{width:83%;}.pyr .l3{width:89%;}.pyr .l2{width:95%;}
+}
+
+/* ---------- callout / big-note ---------- */
+.callout{
+  border:var(--bw) solid var(--ink);border-radius:8px;background:var(--cream-lt);
+  padding:1rem 1.1rem;margin:0 0 1.2rem;
+}
+.callout .k{
+  display:inline-block;background:var(--ink);color:var(--cream);
+  font-size:.68rem;font-weight:800;letter-spacing:.12em;
+  padding:.15rem .6rem;border-radius:4px;margin-bottom:.5rem;
+}
+.callout .k.o{background:var(--orange);}
+.callout p{margin:0 0 .9rem;font-size:.93rem;line-height:1.75;}
+.callout > *:last-child{margin-bottom:0;}
+
+.bignote{
+  border:var(--bw) solid var(--ink);border-radius:8px;background:var(--red);
+  color:var(--cream-lt);padding:1rem 1.1rem;margin:0 0 1.2rem;
+  font-size:1.05rem;font-weight:800;line-height:1.6;letter-spacing:.04em;
+}
+.bignote .s{display:block;font-size:.85rem;font-weight:500;line-height:1.7;margin-top:.5rem;letter-spacing:.02em;}
+
+/* ---------- tables ---------- */
+.tbl{overflow-x:auto;margin:0 0 1.3rem;-webkit-overflow-scrolling:touch;}
+table{border-collapse:collapse;width:100%;font-size:.82rem;line-height:1.65;}
+th,td{border:2px solid var(--ink);padding:.5rem .6rem;text-align:left;vertical-align:top;}
+th{background:var(--ink);color:var(--cream);font-weight:800;letter-spacing:.06em;font-size:.74rem;white-space:nowrap;}
+tbody tr:nth-child(odd) td{background:var(--cream-lt);}
+tbody tr:nth-child(even) td{background:var(--white);}
+td.tm{font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--red);text-align:center;}
+
+/* ---------- glossary ---------- */
+.gloss{margin:0 0 1.3rem;border:var(--bw) solid var(--ink);border-radius:8px;overflow:hidden;background:var(--white);}
+.gloss div{padding:.8rem .95rem;}
+.gloss div:nth-child(odd){background:var(--cream-lt);}
+.gloss div + div{border-top:2px solid var(--ink);}
+.gloss dt{font-weight:800;font-size:.98rem;letter-spacing:.06em;margin-bottom:.15rem;}
+.gloss dd{margin:0;font-size:.84rem;line-height:1.7;}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:2.6rem;border-top:var(--bw) solid var(--ink);
+  padding:1.8rem 0 4rem;font-size:.8rem;line-height:1.8;color:var(--ink-2);
+}
+footer p{margin:0 0 .3rem;}
+footer .sig{
+  margin-top:1.1rem;font-size:.7rem;font-weight:800;
+  letter-spacing:.12em;color:var(--muted);
+}
+
+/* =========================================================
+   印刷・PDF書き出し
+   Chrome: --print-to-pdf --no-pdf-header-footer
+   ページサイズはスマホ比率（390 × 720px）
+   ========================================================= */
+@media print{
+  @page{ size:390px 720px; margin:0; }
+  html,body{ background:var(--cream); }
+  .topbar,.totop{ display:none !important; }
+  .wrap{ max-width:none; padding:0 14px; }
+  section{ padding-top:1.6rem; }
+  .masthead{ padding-top:1.4rem; }
+
+  /* 途中で割れると読めなくなる塊は分割しない */
+  .v,.qa,.callout,.bignote,.note,.archive,.pyr,
+  blockquote,h3,h4,.gloss div,.toc,tr,footer{
+    break-inside:avoid; page-break-inside:avoid;
+  }
+  footer{ margin-top:1.5rem; padding-bottom:1rem; }
+  h2.sec,h3,h4{ break-after:avoid; page-break-after:avoid; }
+  section{ break-before:page; page-break-before:always; }
+  section:first-of-type{ break-before:auto; page-break-before:auto; }
+
+  /* 背景色・墨線を必ず出す */
+  *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+  a{ text-decoration:none; }
+}
+
+/* ---------- back to top ---------- */
+.totop{
+  position:fixed;right:.9rem;bottom:.9rem;z-index:60;
+  width:2.7rem;height:2.7rem;border-radius:50%;
+  border:var(--bw) solid var(--ink);background:var(--white);
+  display:grid;place-items:center;text-decoration:none;
+  font-weight:800;font-size:1rem;color:var(--ink);
+}
+.totop:hover{background:var(--hl);}
+</style>
+
+</head>
+<body>
+<div id="top"></div>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="mk">9/1 第二回講義レポート</span>
+    <a class="to" href="#toc">目次</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+<header class="masthead">
+  <div class="eyebrow">2026.9.1 ／ 第二回講義＋交流会</div>
+  <h1 class="title">喜びを増やす取り組み</h1>
+  <p class="subtitle">9月は〈受容〉のうつわ。<br>支出のなかの「喜び」を、あとからでも増やしていく。</p>
+  <div class="meta">講義60分＋交流会90分／全2時間半</div>
+</header>
+
+<div class="note">
+  <b>この記事の読み方</b><br>
+  当日は「講義 → 交流会」の順で進みましたが、この記事は<b>時系列ではなく、理解しやすい順に組み替えて</b>あります。
+  講義でお伝えした考え方と、そのあと交流会で実際に出てきたお話を、<b>同じテーマのところで並べて</b>います。
+  <br><br>
+  <span class="ts">0:00:00</span> のような表示はアーカイブ動画の再生時間です。気になったところは動画で確認できます。<br>
+  交流会で出たお話は、<b>お名前を伏せてケースとして</b>載せています。
+</div>
+
+<nav class="toc" id="toc">
+  <h2>目次</h2>
+  <ul>
+    <li><a href="#s1"><span class="n">01</span>まず、焦らなくていい</a></li>
+    <li><a href="#s2"><span class="n">02</span>8月にやっていたことの意味</a></li>
+    <li><a href="#s3"><span class="n">03</span>9月に足すこと ── 喜びの持続度</a></li>
+    <li><a href="#s4"><span class="n">04</span>喜びが少なかった支出こそ、掘る</a></li>
+    <li><a href="#s5"><span class="n">05</span>全信全疑 ── 買ったものから受け取り切る</a></li>
+    <li><a href="#s6"><span class="n">06</span>「わがままなんじゃないか」への答え</a></li>
+    <li><a href="#s7"><span class="n">07</span>その先にあるもの</a></li>
+    <li><a href="#s8"><span class="n">08</span>続けにくいときは</a></li>
+    <li><a href="#s9"><span class="n">09</span>9月にできること</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ============ 01 ============ -->
+<section id="s1">
+<div class="eyebrow">01</div>
+<h2 class="sec">まず、焦らなくていい</h2>
+<div class="ts-line"><span class="ts">0:13:57 — 0:20:14</span></div>
+
+<p>この回は、いちばん最初に「<b>変化には時間差がある</b>」という話から入りました。ワークが進んでいない方にとって、いちばん大事な前提になります。</p>
+
+<h3>見えないものと、見えるもの</h3>
+
+<p>このコミュニティでやっていることは、ひとことで言うと <span class="hl">見えないものと見えるものを照らし合わせる</span> 作業です。</p>
+
+<div class="tbl">
+<table>
+<thead><tr><th></th><th>見えないもの</th><th>見えるもの</th></tr></thead>
+<tbody>
+<tr><td class="tm">何を指すか</td><td>意識・感情・直感など。<br>五感で感じられないものすべて</td><td>五感センサーを通して感じられるもの。<br>人はこれを「<b>現実</b>」と呼んでいる</td></tr>
+<tr><td class="tm">ワークでいうと</td><td>喜びの度合い／感情／なぜそう感じたのか</td><td>数字を見る・買ったもの・レシート</td></tr>
+<tr><td class="tm">他人と共有できるか</td><td><b>できない</b>。人によって捉えているものが違う</td><td>できる。「赤いポスト」は誰が見てもポスト</td></tr>
+<tr><td class="tm">変化の速さ</td><td><b>速い</b>。波のように変わる</td><td><b>遅い</b></td></tr>
+<tr><td class="tm">固定のされ方</td><td>固定化されない。すぐ戻る</td><td>一度固定されると簡単には崩れない</td></tr>
+</tbody>
+</table>
+</div>
+
+<blockquote>
+落ち込んでいても、美味しいものを食べたらぐっと気持ちが上がったりとか。逆に、それまでご機嫌だったのに、何かあったときにガクッと落ち込んだりだとか。結構、波のように変わるんですよね。
+</blockquote>
+
+<p>一方で、見える側は時間がかかります。</p>
+
+<blockquote>
+「痩せよう」「スリムになりたい」って思うのは、すぐ思いつきでできると思うんですけど、実際それを物質である体に落とし込むには、ゆっくりゆっくり筋トレしたり、食事を調整するとか、時間が結構かかると思います。
+</blockquote>
+
+<h3>だから、習慣が大事</h3>
+
+<blockquote class="big">
+日々、どれだけ意識をして、その意識のもと行動を続けるから固定化されて、自分の体にちょっとずつ変化が訪れてくる。<br><br>
+その意識を持ったのが今よりも1ヶ月前だとして、ようやく1ヶ月後に出てくるとか、2ヶ月後、3ヶ月後に出てくるとか。<b>結構タイムラグが起きた上で現実化してくる</b>んです。
+</blockquote>
+
+<h3>わかっただけでは、切れない</h3>
+
+<p>この日いちばん通りのよかったのが、カットのたとえでした。</p>
+
+<blockquote>
+上手な方のカットのイメージを見たり、それを作るための理論とか、注意するポイントを聞いたとして、「なるほど、そうやって作るんだな」ってイメージすると思うんですよね。<br><br>
+……でも、やっぱりすぐそれを再現するのは難しい。何回も練習したり、回数を重ねて少しずつ改善していくことによって、そのイメージしていたスタイルが切れるようになる。
+</blockquote>
+
+<p>意識や感情の扱いも、まったく同じです。<b>知る → やる → できる → 分かる</b>。この順番を通らないと身につかない、という話でした。</p>
+
+<div class="bignote">
+見えない側は変わるのが速く、見える側は変わるのが遅い。<br>だから、<b>現実はいつも遅れて動きます。</b>
+<span class="s">いま結果が出ていないことは、失敗ではありません。</span>
+</div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section id="s2">
+<div class="eyebrow">02</div>
+<h2 class="sec">8月にやっていたことの意味</h2>
+<div class="ts-line"><span class="ts">0:09:19 — 0:13:46</span></div>
+
+<p>8月は〈貯蓄〉のうつわでした。収支を見ること、普段の買い物で数字・感情・その理由を意識すること。これを一言でまとめると——</p>
+
+<blockquote class="big">
+お金という価値と交換した、<b>体験や物質の「正体」を捉え続ける</b>。<br>これを一人ひとりにやってもらっていました。
+</blockquote>
+
+<p>買ったときにどういう価値を感じたのか。どこに喜びを感じたのか。逆に、がっかりだった理由は何だったのか。とてもパーソナルな情報です。</p>
+
+<p>そしてこれが、そのまま <b>見えないものと見えるものを照らし合わせる作業</b> になっていました。レシートに書いてある金額は見える側、そのとき何を感じたかは見えない側です。</p>
+
+<h3>まだできていない方へ</h3>
+
+<blockquote>
+レシートワークがまだできていないという方も、まったく焦る必要はありません。このコミュニティに入っている時点で、支払いのときにお金への意識が宿っていますし、それまでと比べてお金にフォーカスする機会は確実に多かったはずです。<br><br>
+そこで発見や気づきがあれば、<b>それだけで大収穫</b>です。
+</blockquote>
+
+<div class="callout">
+<h4>そもそも、買い物の技術は誰も教わっていない</h4>
+<p>この回でくり返し出てきた前提です。</p>
+<blockquote>
+一個一個を観察して、本当にこれは欲しいものだとか、嬉しいものだっていうものを、半年を通して喜びが持続していくくらいまで考えてお買い物をしていって、家の中を見渡したときにそういうものに囲まれているとなったら、もう最強じゃないですか。<br><br>
+でも難しいですよね。<b>誰もそんな教わってない</b>と思いますし、お父さんお母さんからも先生からも教わっていない。そもそも、ある程度失敗しないと上達しないという側面もあります。
+</blockquote>
+<p>だから「これちょっと失敗したな」も、すごく大事なデータになります。</p>
+</div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section id="s3">
+<div class="eyebrow">03</div>
+<h2 class="sec">9月に足すこと ──<br>喜びの持続度</h2>
+<div class="ts-line"><span class="ts">0:25:42 — 0:26:48</span></div>
+
+<p>9月は2つめのうつわ、〈受容〉に入ります。テーマはひとことで言うと <span class="hl">喜びを増やす取り組み</span> です。</p>
+
+<p>方法は、<b>先月の支出の「答え合わせ」</b>。余裕があるときで大丈夫です。</p>
+
+<blockquote>
+先月の買い物をパーッと見て、「前回は喜び100%だったけど、今はどうなんだろう」というのを振り返ってもらえると、<b>ずっと喜び100%のまま</b>のものと、<b>買ったときはあんなに満足していたのに、なんでそんなに喜んでいたんだっけ</b>というものが出てくると思います。
+</blockquote>
+
+<p>この違いを見ていくのが「<b>喜びの持続度</b>」です。長続きしたものと、消えたもの。<b>この両方を見ます。</b></p>
+
+<div class="callout">
+<h4>ケース：3〜4年の楽しみだった定期購読を、やめた</h4>
+<div class="ts-line"><span class="ts">2:08:53 — 2:10:04</span></div>
+<p>運営側の話として、交流会でこんなシェアがありました。</p>
+<blockquote>
+ここ3、4年、定期購読で毎週オンラインでマンガを読んでいるんですよ。何よりも人生の楽しみだったんですけど、<b>ここに来て、そこに喜びを感じない自分がいて</b>。そろそろこれは解約の時期なんだろうなって。
+</blockquote>
+<p>付き合いはじめの頃は、発売日の前夜にコンビニへ「もう並んでいるかな」と見に行くほど生活に密着していたそうです。</p>
+<p><b>昔は最高の喜びだった。でも今は感じない。</b>——これがまさに「喜びの持続度」を自分で観測して、手放した例になります。持続度を見るというのは、こういうことです。</p>
+</div>
+
+<div class="bignote">
+喜びは、買った瞬間に確定しません。<br><b>時間が経ってから見ると、変わっています。</b>
+<span class="s">増えているもの、減っているもの、消えているもの。その3つを見てみてください。</span>
+</div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section id="s4">
+<div class="eyebrow">04</div>
+<h2 class="sec">喜びが少なかった支出こそ、掘る</h2>
+<div class="ts-line"><span class="ts">0:26:48 — 0:35:00</span></div>
+
+<p>多くの方が苦手なところですが、<b>ここがいちばん大事なデータ</b>になります。</p>
+
+<h3>「失敗だった」で終わらせると、もったいない</h3>
+
+<blockquote>
+「失敗だった」となると、ちょっと自分を責める気持ちになりませんか。自己否定とか、「私バカだな、なんでこんなの買っちゃって」というふうになるのは、ちょっともったいない。<br><br>
+そうじゃなくて、<b>全部、実験だと思って</b>。「これ買ったらどうなるかな」「これどれくらい喜びが持続するかな」って。ただただ、そのアクションを起こしたことに対しての結果として受け止めていくと、どんどんお買い物が上手になっていきます。
+</blockquote>
+
+<h3>言葉にすると、初めて意識できる</h3>
+
+<blockquote class="big">
+<b>本当はどういうものが欲しかったのか。</b><br>
+<b>どういうものが手に入ったら、自分は喜んだんだろう。</b><br><br>
+これを言語化してみてください。言葉として捉えることで、自分が初めて意識できるようになるんです。
+</blockquote>
+
+<blockquote>
+言語化までできていないと、なんとなくふわーっとしたイメージで終わってしまいますし、形として捉えられていないのですぐ消えていって、また同じようなパターンを繰り返しやすくなります。<br><br>
+一回間違っていてもいいので、言葉にしてみてください。
+</blockquote>
+
+<h3>焦って買い物してしまうのは、なぜか</h3>
+
+<p>ここで、行動の裏側の話がありました。</p>
+
+<blockquote>
+人というのは、自分が望んでいるものを叶えるよりも、<b>痛みを回避するほうにエネルギーを注ぎやすい</b>生き物なんです。まず生き延びなきゃいけない、というのが本能的にあるので。<br><br>
+だから、焦りとか不安が出ているときは、<b>そういう生存センサーが壁になっている状態</b>なんだな、と意識してもらえるといいです。
+</blockquote>
+
+<p>喜びが持続しなかった買い物は、この「焦り」と結びついていることが多い、という話でした。</p>
+
+<blockquote>
+焦って行動したというのはあくまで結果ですし、変な買い物をしたというのも結果です。<b>その背景に、自分の内側で何が起きていたのか</b>を捉えた上で、「じゃあ、どうしたかったのかな」を言語化する。<br><br>
+これが、<b>自分の欲や望みにフォーカスする</b>という行為になります。
+</blockquote>
+
+<div class="callout">
+<h4>ケース：「家族のため」と思っていた支出が、家族の望みではなかった</h4>
+<div class="ts-line"><span class="ts">1:20:24 — 1:25:17</span></div>
+<p>交流会で共有された、8月にいちばん感情が動いた出来事です。</p>
+<p>誕生日に焼肉に行こうと提案した。でも実は、ご本人は焼肉がそんなに好きではない。<b>「特別な日は焼肉」と勝手に思っていた</b>。子どもも行きたいだろう、という感覚もあった。</p>
+<p>ところが相手から「別に全然行かなくていいんだけど」と言われて、<b>強くイライラした。</b></p>
+<blockquote>
+でも、なんで私こんなに感情が動いてるの？ 前だったら「そんな言い方しなくてもいいじゃん」と思って、結局行くってなっていたと思うんですけど、<b>こんなになるってことは、意味があるのかな</b>って。
+</blockquote>
+<p>結局、焼肉はやめて家でお祝いすることに。すると当日、お子さんがこう言ったそうです。</p>
+<blockquote class="big">
+たぶんお父さんはさ、お母さんにそんなにお金を使わなくていいよ、って言ってるんだと思う。
+</blockquote>
+<p>そして振り返ってみると——</p>
+<blockquote>
+本当になんとなく使っていたものが多かったり、「この家族が喜んでもらえるように」と動いていたものを、<b>そんなに喜んでいないよね</b>ということに対して、寂しさとか焦りとかいろんな感情が募って、「もっとこうしたい」とよくしようとするけど、それを支出で流していた。<b>でも別に、そこまで求めていない二人</b>みたいな。
+</blockquote>
+<p>結果として、5月と比べて<b>カードの引き落としが月に10万円ほど変わった</b>とのことでした。</p>
+<p>「家族のため」と思っていた支出の中に、<b>実は自分の不安を流していた分</b>が混ざっていた。掘るというのは、こういうことです。</p>
+</div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section id="s5">
+<div class="eyebrow">05</div>
+<h2 class="sec">全信全疑 ──<br>買ったものから受け取り切る</h2>
+<div class="ts-line"><span class="ts">0:37:38 — 0:47:45</span></div>
+
+<p>この回でお伝えしたかった、いちばん大きな考え方です。</p>
+
+<div class="bignote">
+一旦、<b>全部信じる</b>。<br>そのうえで、<b>全部疑う</b>。
+<span class="s">ぜんしん ぜんぎ</span>
+</div>
+
+<h3>〈全信〉自分が買ったものを、一旦全部信じてみる</h3>
+
+<blockquote>
+「これいいな」と思ったとか、「これ興味を持った」というものに対して、自分は何か反応して<b>買うという決断をしている</b>わけですよね。まずは、その自分の感覚を一旦全部信じてあげることが大事です。
+</blockquote>
+
+<h4>なぜ、先に信じるのか</h4>
+
+<blockquote class="big">
+世の中にうまくいく方法って、いま<b>無数にあります</b>。一見まったく関係ないようなルートでも、人によってはめちゃくちゃ合っていたりする。<br><br>
+だから「これがいいものか悪いものか」という視点で見てしまうと、<b>どうしても迷子になる</b>んですよ。
+</blockquote>
+
+<blockquote>
+人によってはいいし、人によっては悪い、というのがほとんどのものに当てはまる真実だと思うので。だからこそ一回、<b>これを選んだ自分の選択を信じてみて</b>、「じゃあ、これをどうやったらうまくいくほうに持っていってあげられるかな」ということを、疑いの視線でやってみてもらう。
+</blockquote>
+
+<h3>信じるのは「相手」ではなく、「反応した自分」</h3>
+
+<p>ここが、この考え方のいちばん大事なところです。</p>
+
+<blockquote class="big">
+「この人が提供しているから間違いない」「ここで売り出されている商品だから間違いない」という<b>相手を信じる</b>のではなく、<br>
+それに<b>反応した自分</b>を信じる。
+</blockquote>
+
+<blockquote>
+どんなに自分が信頼している会社や人だったとしても、自分のコンディションでそのときの感覚は変わってしまいます。まずは自分の感覚を研ぎ澄ませて、そこでの情報をたくさんストックしていくほうが、惑わされにくい。<br><br>
+結局、相手に言われた通りに動いていたら、「自分ってどこにいるんだろう」とさまよってしまうので。<b>基準を自分のほうに矢印を向けて選んでいく。</b>
+</blockquote>
+
+<h3>〈全疑〉そのうえで、徹底的に検証する</h3>
+
+<ul>
+<li><b>自分の体を使って、誰よりも使い倒す</b></li>
+<li><b>その品物の良さを研究する</b>／マニアックに見ていく・見つける</li>
+<li><b>欠点や、自分に合わなかった点も含めて</b>検証する</li>
+</ul>
+
+<p>粗探しから入るのではなく、信じて使い倒したうえで「実際どうだったか」を見る。つまり〈全疑〉は、<b>振り返り＝答え合わせ</b>そのものです。</p>
+
+<div class="bignote">
+信じないと、<b>答え合わせができない。</b>
+<span class="s">疑いながら使ったものは「やっぱりダメだった」しか出てきません。</span>
+</div>
+
+<blockquote>
+最初から全部信じないで、ちょっと疑いが入ってしまうと、「やっぱりダメだったな」「やっぱり違うんじゃないかな」という情報を<b>無意識に集めがち</b>になるので、もったいないです。
+</blockquote>
+
+<div class="callout">
+<h4>ケース：受けているあいだは、まったく分からなかった</h4>
+<div class="ts-line"><span class="ts">0:39:36 — 0:42:19</span></div>
+<p>運営自身の体験として、こんな話がありました。数年前、「普通の理性だったら絶対それ買わないよね」という金額のコンサルティングを受けたそうです。1回20分、それが全5回。</p>
+<blockquote>
+受けているときは分からなかった。それが一体何につながるんだ、みたいな。ほぼ雑談みたいな感じだったんですよ。
+</blockquote>
+<p>それでも「無駄にしたくない」と、その20分で話したことをすぐ行動に移し、二人で掘り下げた。すると——</p>
+<blockquote>
+今振り返ると、そのときの私たちには気づけなかったヒントがめちゃくちゃ入っていたり、直接言われたことじゃなくて、たまたま同じコンサルを受けていたグループの方々とのつながりで、また違う展開が生まれたりして。<br><br>
+<b>あれを受けていなかったら今の私たちはいない</b>、というくらい、その後いろんなステップが起きたんです。
+</blockquote>
+<blockquote>
+そのときには、実は買ったものの本当の効果って<b>わからないことがほとんど</b>で、蓋を開けて、自分の体で体感して、<b>時間差でやっとわかる</b>ということが往々にしてあります。
+</blockquote>
+</div>
+
+<h3>コツ ── 期間を決める、3つに絞る</h3>
+
+<blockquote>
+ポイントは、<b>期間を決める</b>といいと思います。講座やセミナーで持ち帰れた内容を「3ヶ月はやってみよう」「1ヶ月はやってみよう」と集中すると、割とステップアップが早くなる傾向があります。<br><br>
+一つのタイミングであまりにも多く学んでいると、<b>どれからも取れない</b>ということが起きやすいので、3つくらいに絞るのは結構大事です。
+</blockquote>
+
+<blockquote>
+世の中に良さそうに見えるものって、たくさん転がっていると思うんですよね。それを買い込んで、ちょっとの満足で過ごしている。成長した気でいるだけで、実は身になっていなかったりします。
+</blockquote>
+
+<div class="note">
+同じ講座を受けても、人によって持ち帰るものは全然違います。<b>この回の話でも、印象に残った一言はきっと皆さんそれぞれ違うはずです。</b>見えないものは他人と共有できないから、そうなります。その感覚こそ、大事にしてください。
+</div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section id="s6">
+<div class="eyebrow">06</div>
+<h2 class="sec">「わがままなんじゃないか」<br>への答え</h2>
+<div class="ts-line"><span class="ts">0:47:50 — 0:55:01</span></div>
+
+<p>ここまでの話は、全部「自分の喜びを増やす」話です。そうすると、必ずこの気持ちが出てきます。</p>
+
+<blockquote>
+自分の欲やエゴを叶えていくことにもなるので、「<b>とてもわがままなんじゃないか</b>」「悪い人間になっているんじゃないか」と心配になる方が多いです。「こういうことをしたら嫌われちゃうんじゃないか、省かれちゃうんじゃないか」と。
+</blockquote>
+
+<p>どこでそう思うようになったのか、という話も出ました。子どもの頃に「お金持ちは嫌味なやつだ」という印象がすり込まれていたり、自分の望みが絶たれて悲しい思いをした経験があったり。</p>
+
+<blockquote>
+自己犠牲とか、自分が我慢すればとか。<b>歯が欠けるくらいずっと歯ぎしりをしていた時期</b>もあって、顎関節症にもなっていたときがありました。「自分の欲を出しちゃいけない、望みを出しちゃいけない、我慢するものだ」というものが固定化されていて。
+</blockquote>
+
+<h3>でも、本当は逆です</h3>
+
+<div class="bignote">
+その欲を叶えている姿を見ることによって、<br><b>周りの人たちは、自分の欲に気づくことができる。</b>
+<span class="s">欲に忠実に生きている人は、すごく周りの役に立っています。本人は無意識ですが。</span>
+</div>
+
+<p>欲を叶えている人を見たときの反応は、2つに分かれます。</p>
+
+<div class="tbl">
+<table>
+<thead><tr><th></th><th>反応</th></tr></thead>
+<tbody>
+<tr><td class="tm">1</td><td>ストレートに気づく ──「私もそれ、やりたかったんだよね」「それ、やっていいんだ」</td></tr>
+<tr><td class="tm">2</td><td>拒否反応で出る ──「めっちゃムカつく」「めっちゃイライラする」</td></tr>
+</tbody>
+</table>
+</div>
+
+<blockquote class="big">
+どちらにせよ、<b>関心は持っている</b>んです。<br>
+人間は、<b>何とも思っていないことには一切反応しない</b>ようにできているので。<br><br>
+何かしらの反応が起きているということは、自分の中に近い欲や望みがある可能性があります。<b>それを誰かが見せてくれないと、自分で自分の欲には気づけない</b>んですよね。
+</blockquote>
+
+<div class="callout">
+<h4>ケース：やってもらえるようになったのに、イライラする</h4>
+<div class="ts-line"><span class="ts">1:52:32 — 2:05:00</span></div>
+<p>交流会でいちばん深く掘り下がったお話です。</p>
+<p>以前はパートナーがまったく家事をしなかった。それが今は180度変わって、掃除も洗濯も食事も、全部やってくれる。帰るとご飯ができていることもある。</p>
+<blockquote>
+完全にめちゃくちゃいいんですけど、けどなんか、<b>母として負けた気持ちで悔しい</b>。やってもらったら、やってもらったで、なんかムカついてきて。<br><br>
+自分ばっかり家事をしていたときは「なんで手伝ってくれないの」ってめっちゃイライラしていたはずなのに、いざやり出したら、またイライラして。
+</blockquote>
+<blockquote>
+私だったらもうちょっと美味しく作るのに、とか。私だったら洗濯こうやって干すのに、とか。<b>変なプライドが</b>。
+</blockquote>
+<p>ここで運営から返したのは、こういう見方でした。</p>
+<blockquote class="big">
+イラッとするポイントが、<b>自分の欲しいポイント</b>なんです。<br>そこを掘っていくのが大事です。
+</blockquote>
+<p>そして、いくつかの角度から。</p>
+<ul>
+<li><b>細かく分解してみる。</b>「料理はゆっくりでいい」「洗濯の畳み方はこれだよな」など、そう思う場面とそう思わない場面があるかもしれない。好きな家事を取られたのが嫌なだけかもしれない</li>
+<li><b>「ちゃんとしたお母さんでいたい」というアイデンティティが揺れている</b>と気づけている。それが崩れそうで不安になっている</li>
+<li><b>理想像を言語化して、照らし合わせてみる。</b>その理想像を生きていたとき「きつい」「つらい」が先行していたなら、本当にいい母親像なのかどうか</li>
+</ul>
+<blockquote>
+本来、子どもが思っている「お母さんになってほしい姿」って、<b>お母さんが楽しく幸せに生きていてもらえたら、子どもは幸せ</b>だと思うんですよ。
+</blockquote>
+</div>
+
+<div class="callout">
+<h4>ケース：プレゼントがズレるのは、なぜか</h4>
+<div class="ts-line"><span class="ts">1:25:52 — 1:40:00</span></div>
+<p>交流会では、贈り物のエピソードが次々に出ました。小学6年生のときにもらった銀色のミニスカート、小学5年生でもらった地球儀、「青いランドセルが欲しい」と言われて勝手にネイビーにしてしまった話——。</p>
+<p>これについての見立てが、〈受容〉の話とまっすぐつながっていました。</p>
+<blockquote>
+これも受容の器を育てて、<b>自分の好みとか喜びの解像度が上がると、このズレは起きにくくなる</b>のかなという気がしていて。
+</blockquote>
+<blockquote>
+自分で欲しいものを自分で分かっていない、ということも往々にしてあると思うんですけど、受容の器のワークをやっていくと、<b>今この瞬間、自分が求めているものをキャッチできる</b>ようになってくるので、聞いてくれたら答えられる。<br><br>
+あとは、その人がその人らしくなっていくので、<b>周りから見ても「これ好きそう」が伝わりやすくなる</b>。だから意外と外れるというときは、まだ自分の個性が周りに伝わっていない可能性もあるかもしれません。
+</blockquote>
+<p>贈る側のスタンスとして、こんな話も出ました。</p>
+<blockquote>
+<b>喜ぶことを強制しない</b>、というのは大事かもしれません。自分があげたいからあげる、与えたいから与える、というスタンスが。
+</blockquote>
+<p>そして、案外<b>小さい頃のほうが自分の欲しいものは分かっている</b>、大人になるにつれて分かりにくくなる、という話でこのテーマは閉じました。</p>
+</div>
+</section>
+
+<!-- ============ 07 ============ -->
+<section id="s7">
+<div class="eyebrow">07</div>
+<h2 class="sec">その先にあるもの</h2>
+<div class="ts-line"><span class="ts">0:55:01 — 1:00:22</span></div>
+
+<p>自分の喜びを増やしていくと、その先に何があるのか。この回の着地点です。</p>
+
+<h3>欲は、その人にしか起きていない感覚</h3>
+
+<blockquote>
+「こうしたい」「いいな」「嫌だな」と思うのは、実は<b>その人にしか起きていない感覚</b>だったりします。同じ状況でも、反応する人としない人がいるので。
+</blockquote>
+
+<blockquote class="big">
+自分の望みや欲にフォーカスして叶えて、そこの解像度を上げていくと、<b>その人のキャラクターがどんどん立っていって、専門性が高まって、唯一無二の存在になりやすい。</b><br><br>
+「こういうところがいいよね」と人から見ても伝わるくらい、その人本来の魅力が出てきやすくなります。
+</blockquote>
+
+<h3>3つのうつわは、こうつながっています</h3>
+
+<div class="pyr">
+  <div class="lvl l1"><b>貯蓄</b>　現状を見る・現在地を正しく見る・自分の感情を見る</div>
+  <div class="lvl l3"><b>受容</b>　自分を喜ばせる・喜びを上げる ＝ 自己理解の解像度が上がる</div>
+  <div class="lvl l5"><b>流入</b>　あふれた分をスキルシェア・対価以上に働く</div>
+</div>
+
+<p>ここで大事なのが、順番です。</p>
+
+<blockquote>
+専門性があまり高まっていない状態で〈流入〉を頑張ると、消費されてしまったり、他の人と比べられて「あなたじゃなくてもいい」と言われてしまったり、<b>ボランティアの状態になりやすい</b>です。
+</blockquote>
+
+<blockquote>
+「世の中に求められている」という理由だけでノウハウを追い求めてしまうと、<b>本人の本質につながった専門性が高まっていない状態で、世間に合わせにいく</b>ことになります。<br><br>
+長期で見たときに摩擦が起きやすかったり、「本当に私、これ好きなのかな」となったり。もっと楽しんで、本当にやりたくてやっている人に勝てなかったりします。
+</blockquote>
+
+<div class="bignote">
+自分を喜ばせるのは、わがままではありません。<br><b>専門性を研ぎ澄ます工程です。</b>
+</div>
+</section>
+
+<!-- ============ 08 ============ -->
+<section id="s8">
+<div class="eyebrow">08</div>
+<h2 class="sec">続けにくいときは</h2>
+<div class="ts-line"><span class="ts">1:43:01 — 1:53:54</span></div>
+
+<p>交流会では「続かない」という声もいくつか出ました。そこで出た処方をまとめます。</p>
+
+<h3>全部やろうとすると、止まる</h3>
+
+<p>お店を経営されている方から、こんなお話がありました。「本当にやるなら全部ちゃんとやりたくて」と思ううちに、8月に1週間書いて、そこから止まってしまった、と。</p>
+
+<blockquote>
+完璧にやりたいというのは、<b>湧きやすいワーク</b>だと思います。特に収支を見るというのは具体のところを突き詰めていくので、「本当はどうなんだ、ここはどうなんだ」とどんどん拡大していきます。
+</blockquote>
+
+<div class="callout">
+<h4>処方：範囲を絞る</h4>
+<blockquote>
+一切合切まとめて書くから大変なんです。<b>家計だけ見る、仕事だけ見る</b>、でいい。<br><br>
+まずは完璧じゃなくてもいいから、<b>自分が管理できる範囲</b>を決めて、無理なくできるようになったら、ちょっとずつその範囲を増やしていく。
+</blockquote>
+<p>交流会でも「今月はあくまで自分の財布だけを見ることにしました。コツを掴めたら家計全体をやってみたい」という声が出ていました。</p>
+</div>
+
+<h3>そもそも、書くのが嫌になる理由</h3>
+
+<p>これは、この回でいちばん腑に落ちる説明だったかもしれません。</p>
+
+<blockquote class="big">
+買い物が自分の中で<b>バツ印</b>が付いていると思うと、それを書くのは<b>そのバツ印を深める行為</b>になるから、やりたくないとなりやすいかも。
+</blockquote>
+
+<p>すでに「これはダメだった」と自分でバツをつけている買い物は、書き出す作業が「バツの再確認」になってしまう。だから手が止まる。</p>
+
+<p>続かないのは、意志の問題ではありません。<b>先にバツ印を外さないと書けない</b>、という順番の問題です。だからこそ §04 の「全部、実験だと思って受け止める」が効いてきます。</p>
+
+<h3>ミニマムライフコストは、一度ひるんでも出す価値がある</h3>
+<div class="ts-line"><span class="ts">1:07:18 — 1:12:11</span></div>
+
+<p>「家族みんなが健康に暮らせる1ヶ月分のお金」を出すワークです。交流会では「めっちゃお金必要やん」「固定費がありすぎる」という声が出ました。</p>
+
+<blockquote>
+1回ひーってなると思うんですけど、<b>出しておいたほうが、結果、安心感は増えます。</b><br><br>
+「3ヶ月はこの金額だけあれば生きられる」というのが自分でなんとなく分かっていたほうが、過剰にお金を追い求めすぎて時間を犠牲にしてしまうことも減りますし、<b>自分の足りる分が分かったほうが、実は入ってきやすい</b>という、お金のうつわの特徴もあります。
+</blockquote>
+
+<p>逆に「計算したら思ったより少なくて、ちょっと頑張ればもっと貯められるのでは、と希望が見えた」という方もいました。</p>
+
+<div class="note">
+毎回アップデートしていくと数値が落ち着いてきて、「うちの今のミニマムライフコストはこのくらいなんだね」という<b>平均値</b>が見えてきます。一度で正解を出す必要はありません。
+</div>
+</section>
+
+<!-- ============ 09 ============ -->
+<section id="s9">
+<div class="eyebrow">09</div>
+<h2 class="sec">9月にできること</h2>
+<div class="ts-line"><span class="ts">1:00:22 — 1:01:27</span></div>
+
+<div class="bignote">
+基本は、8月から続けているワークをそのまま。<br><b>それだけで十分に効果があります。</b>
+<span class="s">以下は、余裕があったら／思いついたら で大丈夫です。</span>
+</div>
+
+<div class="callout">
+<h4>余裕があったら／思いついたら</h4>
+<ul>
+<li>レシートの<b>手順5・6</b>をやってみる<br><span style="font-size:.92em">（次はどうすれば喜びが増えるか／使う前・使う最中・使った後で喜びの割合がどう変わったか）</span></li>
+<li>さらに、<b>買った当時と今</b>でどう変わったかまで見てみる　<b>← 今回の話</b></li>
+<li>喜びが少なかったものは、<b>「本当はどういうものが欲しかったのか」</b>を言葉にしてみる</li>
+<li>まだ手元にあるものは、<b>使い倒す工夫</b>を1つ試してみる</li>
+</ul>
+</div>
+
+<div class="note">
+<b>毎日できたか、1ヶ月ちゃんとできたかは、あまり大事ではありません。</b><br>
+ここに身を置いている時点で、買い物のときに必ず意識が向きます。チャットを見ているだけでも「ほうほう」ということが起こります。
+そこに身を置くと決めた、ご自身の感覚のほうを信じてください。
+</div>
+
+<h3>この先の予定</h3>
+
+<div class="tbl">
+<table>
+<thead><tr><th>いつ</th><th>なに</th></tr></thead>
+<tbody>
+<tr><td class="tm">9/13（日）20:00〜</td><td><b>作業会（追加開催）</b>。1ヶ月の収支を出す回。所要1〜1.5時間の想定</td></tr>
+<tr><td class="tm">9月中旬</td><td>質問交流会</td></tr>
+<tr><td class="tm">9月下旬</td><td>合宿の参加を一度締め切り予定</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout">
+<h4>作業会の持ち物</h4>
+<ul>
+<li>途中まで書いた紙、または配布したフォーマット（<b>プリントアウトして手書き</b>がおすすめです）</li>
+<li>カード決済がある方は、その明細を開ける状態にしておいてください</li>
+</ul>
+<p>一斉に同じことをやるのではなく、<b>それぞれが進めたい作業を進める</b>時間です。分からないところはその場で聞いてください。</p>
+</div>
+</section>
+
+</main>
+
+<footer>
+  <p>お金のうつわを育てる習慣コミュニティ 1期／2026年9月1日 第二回講義</p>
+  <p>アーカイブ動画・ワークシートはコミュニティ内でご案内しています。</p>
+</footer>
+
+</div>
+
+<a class="totop" href="#top">↑</a>
+
+</body>
+</html>
